@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA STUDIO - AIファッションフォト生成 × クリエイティブ制作サービス</title>
+    <meta name="description" content="商品画像1枚で、プロクオリティのモデル着用写真を生成。EC・SNS・広告に最適化されたビジュアルを、AIとサブスクで提供します。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="images-config.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.png" alt="LUMINA STUDIO" class="logo-image">
+                </a>
+                <button class="mobile-menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#ai-service">AI生成</a></li>
+                    <li><a href="#subscription">サブスク</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
+                            target="_blank" class="btn-primary">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <img src="assets/images/hero-main.jpg" alt="LUMINA STUDIO - AI Fashion Photography" class="hero-banner-image">
+    </section>
+
+    <!-- Hero Content Section -->
+    <section class="hero-content-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-up">
+                    撮影しない時代の、<br>
+                    <span class="gradient-text">ファッションフォト。</span>
+                </h1>
+                <p class="hero-subtitle fade-up">
+                    物撮りも、モデル生成も、これひとつ。<br>
+                    ファッションEC特化のクリエイティブ・パートナー。
+                </p>
+                <div class="hero-cta fade-up">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
+                        target="_blank" class="btn-large btn-primary">無料相談・デモ依頼</a>
+                    <a href="#ai-service" class="btn-large btn-secondary">サービスを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title fade-up">ファッションEC運用、<br>こんな課題ありませんか？</h2>
+            <div class="problem-grid">
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <img src="assets/images/icons/cost.png" alt="撮影コスト" loading="lazy">
+                    </div>
+                    <h3>撮影コストが高い</h3>
+                    <p>モデル・カメラマン・スタジオの手配で、毎回数十万円のコストが発生</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <img src="assets/images/icons/time.png" alt="時間コスト" loading="lazy">
+                    </div>
+                    <h3>短サイクル対応が困難</h3>
+                    <p>小ロット・シーズンごとの撮影スケジュール調整が難しい</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <img src="assets/images/icons/volume.png" alt="大量撮影" loading="lazy">
+                    </div>
+                    <h3>商品数が多すぎる</h3>
+                    <p>全商品のビジュアル更新が追いつかず、売上機会を逃している</p>
+                </div>
+                <div class="problem-card fade-up">
+                    <div class="problem-icon">
+                        <img src="assets/images/icons/creative.png" alt="クリエイティブ制作" loading="lazy">
+                    </div>
+                    <h3>SNS・広告用制作が負担</h3>
+                    <p>EC以外にも、Instagram・TikTok・バナー用のクリエイティブが必要</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Service Section -->
+    <section id="ai-service" class="ai-service-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">LUMINA STUDIO</span>
+                <h2 class="section-title fade-up">AIファッションフォト生成</h2>
+                <p class="section-description fade-up">
+                    商品画像をアップロードするだけで、プロクオリティのモデル着用ファッションフォトを高精度に生成。<br>
+                    撮影コスト・モデル手配・スタジオ確保の負担を大幅削減します。
+                </p>
+            </div>
+
+            <div class="how-it-works">
+                <h3 class="subsection-title">使い方は簡単3ステップ</h3>
+                <div class="steps-grid">
+                    <div class="step-card fade-up">
+                        <div class="step-number">01</div>
+                        <h4>商品画像をアップロード</h4>
+                        <p>フラットレイまたはマネキン着用の商品画像を用意</p>
+                    </div>
+                    <div class="step-card fade-up">
+                        <div class="step-number">02</div>
+                        <h4>モデル・背景を選択</h4>
+                        <p>多様なモデル・ポーズ・背景から最適なものを選択</p>
+                    </div>
+                    <div class="step-card fade-up">
+                        <div class="step-number">03</div>
+                        <h4>高精度な画像を生成</h4>
+                        <p>数分でプロクオリティのファッションフォトが完成</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h3 class="subsection-title">生成サンプル</h3>
+                <div class="gallery-marquee">
+                    <div class="gallery-track">
+                        <!-- Samples 1-20 (First Set) -->
+                        <div class="gallery-item"><img src="assets/images/sample1.png" alt="Sample 1" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample2.png" alt="Sample 2" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample3.png" alt="Sample 3" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample4.png" alt="Sample 4" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample5.png" alt="Sample 5" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample6.png" alt="Sample 6" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample7.png" alt="Sample 7" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample8.png" alt="Sample 8" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample9.png" alt="Sample 9" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample10.png" alt="Sample 10" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample11.png" alt="Sample 11" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample12.png" alt="Sample 12" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample13.png" alt="Sample 13" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample14.png" alt="Sample 14" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample15.png" alt="Sample 15" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample16.png" alt="Sample 16" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample17.png" alt="Sample 17" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample18.png" alt="Sample 18" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample19.png" alt="Sample 19" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample20.png" alt="Sample 20" loading="lazy">
+                        </div>
+
+                        <!-- Samples 1-20 (Second Set for Seamless Loop) -->
+                        <div class="gallery-item"><img src="assets/images/sample1.png" alt="Sample 1" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample2.png" alt="Sample 2" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample3.png" alt="Sample 3" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample4.png" alt="Sample 4" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample5.png" alt="Sample 5" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample6.png" alt="Sample 6" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample7.png" alt="Sample 7" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample8.png" alt="Sample 8" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample9.png" alt="Sample 9" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample10.png" alt="Sample 10" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample11.png" alt="Sample 11" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample12.png" alt="Sample 12" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample13.png" alt="Sample 13" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample14.png" alt="Sample 14" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample15.png" alt="Sample 15" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample16.png" alt="Sample 16" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample17.png" alt="Sample 17" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample18.png" alt="Sample 18" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample19.png" alt="Sample 19" loading="lazy">
+                        </div>
+                        <div class="gallery-item"><img src="assets/images/sample20.png" alt="Sample 20" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <img src="assets/images/icons/trend.png" alt="トレンド感" loading="lazy">
+                    </div>
+                    <h4>トレンド感のある表現</h4>
+                    <p>最新のファッショントレンドを反映した自然な着用イメージ</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <img src="assets/images/icons/target.png" alt="Web最適化" loading="lazy">
+                    </div>
+                    <h4>EC最適化された構図</h4>
+                    <p>商品の魅力を最大限に引き出すライティング・アングル</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <img src="assets/images/icons/speed.png" alt="スピード生成" loading="lazy">
+                    </div>
+                    <h4>即時生成</h4>
+                    <p>撮影不要で数分以内に高品質な画像を取得</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="feature-icon">
+                        <img src="assets/images/icons/saving.png" alt="コスト削減" loading="lazy">
+                    </div>
+                    <h4>コスト削減90%</h4>
+                    <p>従来の撮影コストを最大90%削減可能</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Service Section -->
+    <section id="subscription" class="subscription-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">LUMINA STUDIO</span>
+                <h2 class="section-title fade-up">サブスクリプション型<br>クリエイティブ制作サービス</h2>
+                <p class="section-description fade-up">
+                    「AIツール」だけではありません。<br>
+                    面倒な商品撮影から、専属モデルの生成、サムネイル制作まで、<br>
+                    EC運用に必要なクリエイティブワークをワンストップで提供します。
+                </p>
+            </div>
+
+            <div class="service-features">
+                <div class="service-card glass-card fade-up">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/volume.png" alt="物撮り代行" loading="lazy">
+                    </div>
+                    <h3>物撮り代行</h3>
+                    <p>EC用の商品単体撮影（背景処理含む）をプロフェッショナルに対応</p>
+                    <ul class="service-list">
+                        <li>月15型まで定額対応</li>
+                        <li>追加撮影も柔軟に対応</li>
+                        <li>背景処理・レタッチ込み</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card fade-up">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/creative.png" alt="クリエイティブ撮影" loading="lazy">
+                    </div>
+                    <h3>クリエイティブ撮影</h3>
+                    <p>SNS・広告・バナー用のキービジュアル制作</p>
+                    <ul class="service-list">
+                        <li>モデル着用撮影</li>
+                        <li>ブランドトーンに合わせた世界観設計</li>
+                        <li>Instagram / TikTok / 広告バナー対応</li>
+                    </ul>
+                </div>
+                <div class="service-card glass-card fade-up">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/cost.png" alt="制作相談" loading="lazy">
+                    </div>
+                    <h3>制作相談（無制限）</h3>
+                    <p>撮影・制作に関する相談を無制限で受付</p>
+                    <ul class="service-list">
+                        <li>ブランド・商品理解を前提とした提案</li>
+                        <li>優先対応</li>
+                        <li>柔軟なディレクション</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EC Specialization Section -->
+    <section class="ec-specialization-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">EC SPECIALIZED</span>
+                <h2 class="section-title fade-up">なぜファッションEC特化なのか</h2>
+                <p class="section-description fade-up">
+                    一般的なAI画像生成ツールとは異なり、LUMINA STUDIOはファッションECに必要な<br>
+                    細かな調整機能と、プロの制作会社のノウハウを組み込んでいます。
+                </p>
+            </div>
+
+            <div class="ec-features-grid">
+                <div class="ec-feature-card fade-up">
+                    <div class="ec-feature-icon">
+                        <img src="assets/images/icons/target.png" alt="編集機能" loading="lazy">
+                    </div>
+                    <h3>高度な編集機能</h3>
+                    <p>ポージング、モデルの向き、表情、背景まで細かく指定可能。EC商品ページに最適化された構図を実現します。</p>
+                </div>
+
+                <div class="ec-feature-card fade-up">
+                    <div class="ec-feature-icon">
+                        <img src="assets/images/icons/trend.png" alt="ジャンル対応" loading="lazy">
+                    </div>
+                    <h3>ジャンル・雰囲気の指定</h3>
+                    <p>カジュアル、フォーマル、ストリート、モード系など、ブランドのトーンに合わせたモデルの雰囲気を細かく調整できます。</p>
+                </div>
+
+                <div class="ec-feature-card fade-up">
+                    <div class="ec-feature-icon">
+                        <img src="assets/images/icons/creative.png" alt="制作会社" loading="lazy">
+                    </div>
+                    <h3>プロの制作会社監修</h3>
+                    <p>ファッションフォトやECビジュアル制作に強い制作会社のアドバイスを得て開発。現場で求められるクオリティを実現しています。</p>
+                </div>
+            </div>
+
+            <div class="comparison-highlight fade-up">
+                <h3>他社AIツールとの違い</h3>
+                <div class="comparison-points">
+                    <div class="comparison-point">
+                        <span class="comparison-label">一般的なAIツール</span>
+                        <p>汎用的な画像生成のみ。EC向けの細かい調整ができず、プロンプトの試行錯誤が必要。</p>
+                    </div>
+                    <div class="comparison-point highlight">
+                        <span class="comparison-label">LUMINA STUDIO</span>
+                        <p>ファッションEC専用の編集機能を搭載。ポージング・向き・雰囲気を直感的に指定でき、即座にEC最適化された画像を生成。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title fade-up">従来の撮影 vs LUMINA</h2>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="highlight-column">LUMINA STUDIO</th>
+                            <th>他社AIツール</th>
+                            <th>従来の撮影代行</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-label">商品写真</td>
+                            <td class="highlight-column"><span class="check">✓</span> <strong>物撮り代行込み</strong></td>
+                            <td><span class="cross">✗</span> 自分で撮影が必要</td>
+                            <td><span class="check">✓</span> プロが撮影</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">モデル作成</td>
+                            <td class="highlight-column"><span class="check">✓</span> <strong>専属モデル制作</strong></td>
+                            <td><span class="info">△</span> 毎回プロンプト調整</td>
+                            <td><span class="cross">✗</span> モデル手配必須</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">月額コスト</td>
+                            <td class="highlight-column"><span class="check">✓</span> <strong>¥9,800〜</strong></td>
+                            <td><span class="info">△</span> ツール代 + 工数</td>
+                            <td><span class="cross">✗</span> ¥50,000〜</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">クオリティ</td>
+                            <td class="highlight-column"><span class="check">✓</span> <strong>プロ素材 × 高精度AI</strong></td>
+                            <td><span class="cross">✗</span> 素人素材 × AI</td>
+                            <td><span class="check">✓</span> 高品質</td>
+                        </tr>
+                        <tr>
+                            <td class="row-label">手間</td>
+                            <td class="highlight-column"><span class="check">✓</span> <strong>丸投げOK</strong></td>
+                            <td><span class="cross">✗</span> 習得に時間がかかる</td>
+                            <td><span class="info">△</span> 打ち合わせ等</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases-section">
+        <div class="container">
+            <h2 class="section-title fade-up">活用シーン</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card fade-up">
+                    <div class="use-case-image">
+                        <img src="assets/images/usecase_ec.png" alt="EC商品画像" loading="lazy">
+                    </div>
+                    <div class="use-case-content">
+                        <h3>EC商品画像</h3>
+                        <p>商品ページのメインビジュアルとして、モデル着用写真を掲載。購買意欲を高め、CVR向上に貢献します。</p>
+                    </div>
+                </div>
+                <div class="use-case-card fade-up">
+                    <div class="use-case-image">
+                        <img src="assets/images/usecase_sns.png" alt="SNS投稿" loading="lazy">
+                    </div>
+                    <div class="use-case-content">
+                        <h3>SNS投稿</h3>
+                        <p>Instagram・TikTok用のビジュアルコンテンツを量産。トレンド感のある投稿で、フォロワーエンゲージメントを向上。</p>
+                    </div>
+                </div>
+                <div class="use-case-card fade-up">
+                    <div class="use-case-image">
+                        <img src="assets/images/usecase_ad_banner.png" alt="広告バナー" loading="lazy">
+                    </div>
+                    <div class="use-case-content">
+                        <h3>広告バナー</h3>
+                        <p>Google広告・Facebook広告用のクリエイティブを効率的に制作。A/Bテスト用の複数パターンも簡単に生成。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2 class="section-title fade-up">料金プラン</h2>
+            <div class="pricing-grid">
+                <!-- Unified Plan -->
+                <div class="pricing-card featured-pricing fade-up">
+                    <div class="pricing-badge">期間限定50%OFF</div>
+                    <div class="pricing-tag">ファッションEC特化プラン</div>
+                    <div class="price">
+                        <div class="price-original">¥30,000</div>
+                        <span class="price-amount">¥15,000</span>
+                        <span class="price-period">/月</span>
+                    </div>
+                    <p class="pricing-description">AI生成から物撮り、マーケティング支援まで。ファッションECに必要なすべてを、ワンストップで提供します。</p>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> <strong>AI生成ツール使用</strong></li>
+                        <li><span class="check">✓</span> <strong>専属モデル生成</strong></li>
+                        <li><span class="check">✓</span> <strong>AI生成画像 無制限</strong></li>
+                        <li><span class="check">✓</span> 物撮り代行プラス（30型まで+¥10,000）</li>
+                        <li><span class="check">✓</span> パスポート所有者による生成AI導入支援<br><span
+                                class="feature-detail">（ChatGPT、Gemini他）</span></li>
+                        <li><span class="check">✓</span> マーケティング支援</li>
+                    </ul>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
+                        target="_blank" class="btn-large btn-primary">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title fade-up">よくある質問</h2>
+            <div class="faq-container">
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>AI生成の精度はどのくらいですか？</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>最新のAI技術により、プロクオリティの高精度な画像を生成します。商品の質感・色味・シルエットを忠実に再現し、自然なモデル着用イメージを実現します。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>どんな商品に対応していますか？</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>アパレル全般（トップス・ボトムス・ワンピース・アウター等）に対応しています。アクセサリーやバッグなどの小物も対応可能です。詳細はお問い合わせください。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>サブスクリプションの契約期間は？</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>月額契約となっており、最低契約期間は設けておりません。繁忙期のみのご利用や、単発でのご依頼も可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>納期はどのくらいですか？</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>AI生成の場合は数分〜数時間、物撮り代行は3〜5営業日、クリエイティブ撮影は内容により1〜2週間程度です。お急ぎの場合はご相談ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>商用利用は可能ですか？</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>はい、生成された画像は商用利用可能です。EC・SNS・広告など、あらゆる用途でご利用いただけます。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-up">
+                    <button class="faq-question">
+                        <span>まずは試してみたいのですが...</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>無料相談・デモ依頼を受け付けております。実際の生成サンプルをご覧いただきながら、貴社のニーズに最適なプランをご提案いたします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-up">まずはお気軽にご相談ください</h2>
+                <p class="contact-description fade-up">
+                    無料相談・デモ依頼を受け付けております。<br>
+                    貴社のEC運用課題をヒアリングし、最適なソリューションをご提案いたします。
+                </p>
+                <div class="contact-cta fade-up">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
+                        target="_blank" class="btn-large btn-primary">お問い合わせ</a>
+                </div>
+                <div class="contact-info">
+                    <p>📧 tomorrowprooftokyo@gmail.com</p>
+                    <p>営業時間：平日 10:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand fade-up">
+                    <h3>LUMINA STUDIO</h3>
+                    <p>AIファッションフォト生成 × クリエイティブ制作サービス</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column fade-up">
+                        <h4>サービス</h4>
+                        <ul>
+                            <li><a href="#ai-service">AI生成</a></li>
+                            <li><a href="#subscription">サブスク</a></li>
+                            <li><a href="#pricing">料金</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column fade-up">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
+                                    target="_blank">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LUMINA STUDIO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
