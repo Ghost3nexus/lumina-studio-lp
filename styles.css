@@ -673,6 +673,60 @@ section {
     }
 }
 
+/* ===================================
+   Dev Mode - Sample Number Overlay
+   =================================== */
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item::before {
+    content: attr(data-sample-number);
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border: 2px solid var(--color-accent-purple);
+    box-shadow: 0 4px 12px rgba(159, 122, 234, 0.4);
+}
+
+body.dev-mode .gallery-item::before {
+    opacity: 1;
+}
+
+/* Dev Mode Indicator */
+.dev-mode-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #9F7AEA 0%, #D97706 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 8px 24px rgba(159, 122, 234, 0.4);
+}
+
+body.dev-mode .dev-mode-indicator {
+    opacity: 1;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

@@ -161,3 +161,78 @@ document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
 console.log('%cLUMINA STUDIO', 'font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #C084FC 0%, #F59E0B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
 console.log('%cAIファッションフォト生成 × クリエイティブ制作サービス', 'font-size: 14px; color: #a0a0a0;');
 console.log('お問い合わせ: info@lumina-studio.com');
+
+// ===================================
+// Dev Mode - Sample Number Overlay
+// ===================================
+(function () {
+    let devModeActive = false;
+
+    // Check URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('dev') === 'true') {
+        devModeActive = true;
+    }
+
+    // Add data attributes to gallery items
+    function addSampleNumbers() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach((item, index) => {
+            // Calculate sample number (1-20, repeating)
+            const sampleNumber = (index % 20) + 1;
+            item.setAttribute('data-sample-number', `Sample ${sampleNumber}`);
+        });
+    }
+
+    // Toggle dev mode
+    function toggleDevMode() {
+        devModeActive = !devModeActive;
+
+        if (devModeActive) {
+            document.body.classList.add('dev-mode');
+            console.log('%c🔧 Dev Mode: ON', 'font-size: 14px; font-weight: bold; color: #9F7AEA;');
+            console.log('Sample numbers are now visible on gallery images.');
+        } else {
+            document.body.classList.remove('dev-mode');
+            console.log('%c🔧 Dev Mode: OFF', 'font-size: 14px; font-weight: bold; color: #888;');
+        }
+
+        // Update URL parameter
+        const url = new URL(window.location);
+        if (devModeActive) {
+            url.searchParams.set('dev', 'true');
+        } else {
+            url.searchParams.delete('dev');
+        }
+        window.history.replaceState({}, '', url);
+    }
+
+    // Create dev mode indicator
+    function createDevModeIndicator() {
+        const indicator = document.createElement('div');
+        indicator.className = 'dev-mode-indicator';
+        indicator.textContent = '🔧 Dev Mode: ON (Ctrl+Shift+D to toggle)';
+        document.body.appendChild(indicator);
+    }
+
+    // Initialize
+    addSampleNumbers();
+    createDevModeIndicator();
+
+    // Apply dev mode if enabled
+    if (devModeActive) {
+        document.body.classList.add('dev-mode');
+        console.log('%c🔧 Dev Mode: ON', 'font-size: 14px; font-weight: bold; color: #9F7AEA;');
+        console.log('Sample numbers are visible. Press Ctrl+Shift+D to toggle.');
+    }
+
+    // Keyboard shortcut: Ctrl+Shift+D (or Cmd+Shift+D on Mac)
+    document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
+            e.preventDefault();
+            toggleDevMode();
+        }
+    });
+
+    console.log('%c💡 Tip: Press Ctrl+Shift+D to toggle dev mode and see sample numbers', 'font-size: 12px; color: #888;');
+})();
