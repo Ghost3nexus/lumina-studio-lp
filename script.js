@@ -236,3 +236,27 @@ console.log('お問い合わせ: info@lumina-studio.com');
 
     console.log('%c💡 Tip: Press Ctrl+Shift+D to toggle dev mode and see sample numbers', 'font-size: 12px; color: #888;');
 })();
+
+// ===================================
+// Contact Form Handling
+// ===================================
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        // Check honeypot field for spam protection
+        const honeypot = this.querySelector('.honeypot');
+
+        if (honeypot && honeypot.value !== '') {
+            // Honeypot was filled - likely a bot
+            e.preventDefault();
+            console.log('Spam detected - form submission blocked');
+            return false;
+        }
+
+        // Form is valid - allow submission to thanks.html
+        // The form will naturally redirect via action="/thanks.html"
+        console.log('Form submitted successfully');
+    });
+}
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせありがとうございます - LUMINA STUDIO</title>
+    <meta name="description" content="お問い合わせいただきありがとうございます。1〜2営業日以内にご連絡いたします。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --color-bg-primary: #050505;
+            --color-bg-secondary: #111111;
+            --color-bg-tertiary: #1A1A1A;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #CCCCCC;
+            --color-accent-purple: #9F7AEA;
+            --color-accent-gold: #D97706;
+            --gradient-primary: linear-gradient(135deg, #9F7AEA 0%, #D97706 100%);
+            --spacing-sm: 1.5rem;
+            --spacing-md: 3rem;
+            --spacing-lg: 6rem;
+            --font-display: 'Noto Serif JP', 'Cormorant Garamond', serif;
+            --font-body: 'Noto Sans JP', 'Inter', sans-serif;
+            --radius-md: 9999px;
+            --shadow-glow: 0 0 60px rgba(159, 122, 234, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--spacing-md);
+        }
+
+        .thanks-container {
+            max-width: 700px;
+            text-align: center;
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), var(--shadow-glow);
+        }
+
+        .thanks-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-md);
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .thanks-message {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .thanks-details {
+            background: var(--color-bg-tertiary);
+            padding: var(--spacing-md);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .thanks-details p {
+            color: var(--color-text-secondary);
+            margin: 0.75rem 0;
+            font-size: 1rem;
+        }
+
+        .thanks-details strong {
+            color: var(--color-text-primary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.125rem 2.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 1.125rem;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), var(--shadow-glow);
+        }
+
+        .contact-info {
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info p {
+            color: var(--color-text-secondary);
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-sm);
+            }
+
+            .thanks-container {
+                padding: var(--spacing-md);
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .thanks-message {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="thanks-container">
+        <div class="thanks-icon">✓</div>
+
+        <h1>お問い合わせありがとうございます</h1>
+
+        <p class="thanks-message">
+            お問い合わせを受け付けました。<br>
+            内容を確認の上、1〜2営業日以内にご連絡いたします。
+        </p>
+
+        <div class="thanks-details">
+            <p><strong>📧 確認メール</strong></p>
+            <p>ご入力いただいたメールアドレスに確認メールをお送りしております。<br>
+                届いていない場合は、迷惑メールフォルダをご確認ください。</p>
+        </div>
+
+        <a href="index.html" class="btn-primary">トップページに戻る</a>
+
+        <div class="contact-info">
+            <p>📧 tomorrowprooftokyo@gmail.com</p>
+            <p>営業時間:平日 10:00 - 18:00</p>
+        </div>
+    </div>
+
+    <!-- Google Ads Conversion Tracking -->
+    <!-- Add your Google Ads conversion tracking code here -->
+    <script>
+        // Example: gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
+        console.log('Thank you page loaded - Conversion tracking ready');
+    </script>
+</body>
+
+</html>

@@ -40,8 +40,7 @@
                     <li><a href="#subscription">サブスク</a></li>
                     <li><a href="#pricing">料金</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
-                            target="_blank" class="btn-primary">お問い合わせ</a></li>
+                    <li><a href="#contact" class="btn-primary">お問い合わせ</a></li>
                 </ul>
             </div>
         </div>
@@ -65,8 +64,7 @@
                     ファッションEC特化のクリエイティブ・パートナー。
                 </p>
                 <div class="hero-cta fade-up">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
-                        target="_blank" class="btn-large btn-primary">無料相談・デモ依頼</a>
+                    <a href="#contact" class="btn-large btn-primary">無料相談・デモ依頼</a>
                     <a href="#ai-service" class="btn-large btn-secondary">サービスを見る</a>
                 </div>
             </div>
@@ -486,8 +484,7 @@
                                 class="feature-detail">（ChatGPT、Gemini他）</span></li>
                         <li><span class="check">✓</span> マーケティング支援</li>
                     </ul>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
-                        target="_blank" class="btn-large btn-primary">お問い合わせ</a>
+                    <a href="#contact" class="btn-large btn-primary">お問い合わせ</a>
                 </div>
             </div>
         </div>
@@ -556,23 +553,61 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-form-section">
         <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title fade-up">まずはお気軽にご相談ください</h2>
-                <p class="contact-description fade-up">
-                    無料相談・デモ依頼を受け付けております。<br>
-                    貴社のEC運用課題をヒアリングし、最適なソリューションをご提案いたします。
+            <div class="section-header">
+                <h2 class="section-title fade-up">無料相談・お問い合わせ</h2>
+                <p class="section-description fade-up">
+                    AI生成 × ECプロ監修で売れる商品画像を設計します。<br>
+                    まずはお気軽にご相談ください。
                 </p>
-                <div class="contact-cta fade-up">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
-                        target="_blank" class="btn-large btn-primary">お問い合わせ</a>
-                </div>
-                <div class="contact-info">
-                    <p>📧 tomorrowprooftokyo@gmail.com</p>
-                    <p>営業時間：平日 10:00 - 18:00</p>
-                </div>
+            </div>
+
+            <div class="contact-form-wrapper fade-up">
+                <form id="contactForm" class="contact-form" action="thanks.html" method="GET">
+                    <!-- Honeypot field for spam protection -->
+                    <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+                    <div class="form-group">
+                        <label for="company">会社名 <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">ご担当者名 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry-type">お問い合わせ種別 <span class="required">*</span></label>
+                        <select id="inquiry-type" name="inquiry-type" required>
+                            <option value="">選択してください</option>
+                            <option value="demo">無料相談・デモ依頼</option>
+                            <option value="pricing">料金プランについて</option>
+                            <option value="technical">技術的な質問</option>
+                            <option value="partnership">業務提携について</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">ご相談内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-large btn-primary">送信する</button>
+                </form>
+            </div>
+
+            <div class="contact-info fade-up">
+                <p>📧 tomorrowprooftokyo@gmail.com</p>
+                <p>営業時間:平日 10:00 - 18:00</p>
             </div>
         </div>
     </section>
@@ -598,8 +633,7 @@
                         <h4>サポート</h4>
                         <ul>
                             <li><a href="#faq">FAQ</a></li>
-                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScSBYkBsXWNTLHMya4ERZ7jcGf7mH1BqEmLUqyF4kVpOac0HA/viewform?usp=publish-editor"
-                                    target="_blank">お問い合わせ</a></li>
+                            <li><a href="#contact">お問い合わせ</a></li>
                         </ul>
                     </div>
                 </div>
