@@ -155,7 +155,24 @@ const IMAGES = {
 
 ## 🌐 デプロイ
 
-### Vercel
+### Vercel（推奨）
+
+**GitHubから自動デプロイ:**
+1. [Vercel](https://vercel.com/)にログイン
+2. "Import Project" → GitHubリポジトリを選択
+3. プロジェクト設定:
+   - Framework Preset: Other
+   - Root Directory: `./`
+   - Build Command: (空欄)
+   - Output Directory: (空欄)
+4. "Deploy"をクリック
+
+**自動デプロイ設定:**
+- `main`ブランチへのプッシュで自動デプロイ
+- プルリクエストごとにプレビューURL生成
+- カスタムドメイン設定可能
+
+**ローカルからデプロイ:**
 ```bash
 npm install -g vercel
 cd "LUMINA STUDIO LP"
@@ -170,6 +187,31 @@ vercel
 1. GitHubリポジトリを作成
 2. ファイルをプッシュ
 3. Settings → Pages → ソースを選択
+
+## 📋 フォーム機能
+
+### お問い合わせフォーム
+- **場所**: `index.html` の `#contact` セクション
+- **必須項目**: 会社名、担当者名、メールアドレス、お問い合わせ種別、相談内容
+- **スパム対策**: Honeypotフィールド実装済み
+- **送信後**: `thanks.html` にリダイレクト
+
+### Google広告コンバージョン計測
+`thanks.html` にGoogle広告のコンバージョントラッキングコードを追加してください:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-XXXXXXXXX');
+  gtag('event', 'conversion', {
+    'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXX'
+  });
+</script>
+```
 
 ## 📧 お問い合わせ
 

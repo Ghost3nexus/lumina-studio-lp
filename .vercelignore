@@ -1,0 +1,13 @@
+# Vercel deployment
+.vercel
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
