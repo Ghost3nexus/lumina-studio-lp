@@ -174,6 +174,15 @@
             }
         }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17948601738"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17948601738');
+    </script>
 </head>
 
 <body>
@@ -202,10 +211,12 @@
     </div>
 
     <!-- Google Ads Conversion Tracking -->
-    <!-- Add your Google Ads conversion tracking code here -->
     <script>
-        // Example: gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
-        console.log('Thank you page loaded - Conversion tracking ready');
+        // コンバージョンイベント発火
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17948601738/YOUR_CONVERSION_LABEL'
+        });
+        console.log('Conversion event fired - Contact form submission tracked');
     </script>
 </body>
 
