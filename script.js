@@ -238,25 +238,81 @@ console.log('お問い合わせ: info@lumina-studio.com');
 })();
 
 // ===================================
-// Contact Form Handling
+// Contact Form Handling with Fetch API
 // ===================================
 const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        // Check honeypot field for spam protection
-        const honeypot = this.querySelector('.honeypot');
+    contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
 
-        if (honeypot && honeypot.value !== '') {
-            // Honeypot was filled - likely a bot
-            e.preventDefault();
-            console.log('Spam detected - form submission blocked');
-            return false;
+        // ボタンを無効化してローディング状態に
+        submitBtn.disabled = true;
+        submitBtn.textContent = '送信中...';
+        formMessage.textContent = '';
+        formMessage.className = 'form-message';
+
+        try {
+            // フォームデータを取得
+            const formData = new FormData(contactForm);
+            const data = {
+                company: formData.get('company'),
+                name: formData.get('name'),
+                email: formData.get('email'),
+                contact_type: formData.get('contact_type'),
+                message: formData.get('message'),
+                honeypot: formData.get('honeypot') || ''
+            };
+
+            // Honeypotチェック（クライアント側でも確認）
+            if (data.honeypot) {
+                console.log('Spam detected - blocking submission');
+                // スパムの場合も成功したように見せる
+                setTimeout(() => {
+                    window.location.href = 'thanks.html';
+                }, 500);
+                return;
+            }
+
+            // APIエンドポイントに送信
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.ok) {
+                // 成功時はthanksページにリダイレクト
+                formMessage.textContent = 'お問い合わせを受け付けました。ありがとうございます。';
+                formMessage.className = 'form-message success';
+
+                setTimeout(() => {
+                    window.location.href = 'thanks.html';
+                }, 1000);
+            } else {
+                // エラー時はメッセージを表示
+                formMessage.textContent = result.error || 'エラーが発生しました。もう一度お試しください。';
+                formMessage.className = 'form-message error';
+
+                // ボタンを再度有効化
+                submitBtn.disabled = false;
+                submitBtn.textContent = '送信する';
+            }
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            formMessage.textContent = '通信エラーが発生しました。インターネット接続を確認してください。';
+            formMessage.className = 'form-message error';
+
+            // ボタンを再度有効化
+            submitBtn.disabled = false;
+            submitBtn.textContent = '送信する';
         }
-
-        // Form is valid - allow submission to thanks.html
-        // The form will naturally redirect via action="/thanks.html"
-        console.log('Form submitted successfully');
     });
 }
-

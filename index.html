@@ -565,9 +565,9 @@
             </div>
 
             <div class="contact-form-wrapper fade-up">
-                <form id="contactForm" class="contact-form" action="thanks.html" method="GET">
+                <form id="contactForm" class="contact-form">
                     <!-- Honeypot field for spam protection -->
-                    <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+                    <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off">
 
                     <div class="form-group">
                         <label for="company">会社名 <span class="required">*</span></label>
@@ -585,8 +585,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inquiry-type">お問い合わせ種別 <span class="required">*</span></label>
-                        <select id="inquiry-type" name="inquiry-type" required>
+                        <label for="contact-type">お問い合わせ種別 <span class="required">*</span></label>
+                        <select id="contact-type" name="contact_type" required>
                             <option value="">選択してください</option>
                             <option value="demo">無料相談・デモ依頼</option>
                             <option value="pricing">料金プランについて</option>
@@ -601,7 +601,8 @@
                         <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn-large btn-primary">送信する</button>
+                    <button type="submit" class="btn-large btn-primary" id="submitBtn">送信する</button>
+                    <div id="formMessage" class="form-message"></div>
                 </form>
             </div>
 
