@@ -82,7 +82,7 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = currentScroll;
-});
+}, { passive: true }); // Passive listener for better scroll performance
 
 // ===================================
 // Scroll Animations
@@ -139,6 +139,44 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
     };
+}
+
+// ===================================
+// iOS Safari Fixes
+// ===================================
+// Fix for 100vh issue on iOS Safari
+function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVH();
+window.addEventListener('resize', debounce(setVH, 100), { passive: true });
+window.addEventListener('orientationchange', debounce(setVH, 100), { passive: true });
+
+// ===================================
+// Sticky CTA Control
+// ===================================
+const stickyCta = document.getElementById('sticky-cta');
+const pricingSection = document.getElementById('pricing');
+
+if (pricingSection && stickyCta) {
+    const pricingObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px'
+    };
+
+    const pricingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+    }, pricingObserverOptions);
+
+    pricingObserver.observe(pricingSection);
 }
 
 // ===================================

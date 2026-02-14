@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <title>LUMINA STUDIO - AIファッションフォト生成 × クリエイティブ制作サービス</title>
     <meta name="description" content="商品画像1枚で、プロクオリティのモデル着用写真を生成。EC・SNS・広告に最適化されたビジュアルを、AIとサブスクで提供します。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,13 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Apple-specific meta tags for iOS optimization -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LUMINA STUDIO">
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimization.css">
     <script src="images-config.js"></script>
 
     <!-- Google tag (gtag.js) -->
@@ -650,6 +657,16 @@
     </section>
 
     <!-- Footer -->
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta">
+        <div class="sticky-cta-content">
+            <div class="sticky-cta-text">
+                <span class="sticky-cta-title">今すぐ始める</span>
+                <span class="sticky-cta-price">¥15,000/月</span>
+            </div>
+            <a href="#contact" class="btn-primary">無料相談する</a>
+        </div>
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
