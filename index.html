@@ -10,13 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Syne:wght@700;800&display=swap"
         rel="stylesheet">
 
     <!-- Apple-specific meta tags for iOS optimization -->
@@ -26,6 +20,72 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mobile-optimization.css">
+    <style>
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            line-height: 1;
+            background: none;
+            -webkit-text-fill-color: initial;
+            text-transform: none;
+        }
+
+        .logo-main {
+            font-family: 'Comfortaa', cursive !important;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: #fff;
+            text-transform: lowercase;
+            letter-spacing: -0.05em;
+            margin-bottom: -5px;
+        }
+
+        .logo-sub {
+            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            position: relative;
+            padding-left: 0.3em;
+        }
+
+        .logo-sub::before,
+        .logo-sub::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: #fff;
+            margin: 0 8px;
+            opacity: 0.8;
+        }
+
+        /* Footer logo specific overrides if needed */
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+            width: fit-content;
+        }
+
+        .footer-logo .logo-main,
+        .footer-logo .logo-sub {
+            color: #fff;
+        }
+
+        .footer-logo .logo-sub::before,
+        .footer-logo .logo-sub::after {
+            background-color: #fff;
+        }
+    </style>
     <script src="images-config.js"></script>
 
     <!-- Google tag (gtag.js) -->
@@ -44,7 +104,8 @@
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="logo">
-                    <img src="assets/images/logo.png" alt="LUMINA STUDIO" class="logo-image">
+                    <span class="logo-main">lumina</span>
+                    <span class="logo-sub">STUDIO</span>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="メニュー">
                     <span></span>
@@ -671,7 +732,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand fade-up">
-                    <h3>LUMINA STUDIO</h3>
+                    <a href="#" class="footer-logo">
+                        <span class="logo-main">lumina</span>
+                        <span class="logo-sub">STUDIO</span>
+                    </a>
                     <p>AIファッションフォト生成 × クリエイティブ制作サービス</p>
                 </div>
                 <div class="footer-links">
