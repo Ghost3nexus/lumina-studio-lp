@@ -2929,3 +2929,259 @@ body.dev-mode .dev-mode-indicator {
     object-fit: cover;
 }
 
+
+/* =============================================================
+   OFGALLERY v3 — Kive editorial grid (2026-02-21)
+   Top: EC(3:4) + IG(3:4) | Bottom: Ads(16:9) full-width
+   ============================================================= */
+
+.ofgallery {
+    display: grid;
+    grid-template-areas:
+        "ec ig"
+        "ads ads";
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 2.5rem;
+}
+
+.ofgallery-ec  { grid-area: ec; }
+.ofgallery-ig  { grid-area: ig; }
+.ofgallery-ads { grid-area: ads; }
+
+/* Carousel track: 3:4 aspect ratio */
+.ofgallery-carousel-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f4f4f5;
+}
+
+/* Slide */
+.ofgallery-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.ofgallery-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.ofgallery-slide .ofgallery-img-wrap {
+    position: absolute;
+    inset: 0;
+    border: none;
+    border-radius: inherit;
+    min-height: unset;
+}
+
+/* Portrait (3:4) — IG */
+.ofgallery-img-wrap--portrait {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e4e4e7;
+    background: #f4f4f5;
+    min-height: unset !important;
+    cursor: pointer;
+}
+
+/* Landscape (16:9) — Ads */
+.ofgallery-img-wrap--landscape {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #e4e4e7;
+    background: #f4f4f5;
+    min-height: unset !important;
+    cursor: pointer;
+}
+
+/* Images inside portrait/landscape fill */
+.ofgallery-img-wrap--portrait .ofgallery-img,
+.ofgallery-img-wrap--landscape .ofgallery-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+.ofgallery-img-wrap--portrait:hover .ofgallery-img,
+.ofgallery-img-wrap--landscape:hover .ofgallery-img {
+    transform: scale(1.03);
+}
+
+/* Bottom overlay on carousel */
+.ofc-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    z-index: 10;
+    border-radius: 0 0 12px 12px;
+}
+
+.ofc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Bottom overlay on IG/Ads */
+.ofgallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Tag label */
+.ofc-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.95);
+    text-transform: uppercase;
+}
+.ofc-ratio {
+    font-weight: 500;
+    opacity: 0.65;
+    font-size: 10px;
+}
+
+/* Dark pills (over dark bg) */
+.ofcard-pills--dark {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.ofcard-pill--dark {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+    transition: background 0.15s, border-color 0.15s;
+}
+.ofcard-pill--dark.is-active {
+    background: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,0.7);
+    color: #fff;
+}
+
+/* Carousel nav (inside overlay) */
+.ofc-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+.ofc-btn {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    transition: background 0.15s;
+}
+.ofc-btn:hover { background: rgba(255,255,255,0.35); }
+
+.ofc-dots { display: flex; gap: 4px; }
+.ofc-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.ofc-dot.is-active { background: #fff; }
+
+/* D&D hint overlay */
+.ofgallery-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(24,24,27,0.5);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    backdrop-filter: blur(2px);
+    border-radius: inherit;
+    z-index: 20;
+}
+.ofgallery-img-wrap:hover .ofgallery-hint,
+.ofgallery-img-wrap.is-over .ofgallery-hint { opacity: 1; }
+.ofgallery-img-wrap.is-over { outline: 2px solid #fff; }
+
+/* D&D hint on portrait/landscape wrappers */
+.ofgallery-img-wrap--portrait .ofgallery-hint,
+.ofgallery-img-wrap--landscape .ofgallery-hint { z-index: 30; }
+
+/* File input */
+.ofgallery-file-input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 25;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .ofgallery {
+        grid-template-areas:
+            "ec ec"
+            "ig ads";
+        grid-template-columns: 1fr 1fr;
+    }
+    .ofgallery-img-wrap--landscape {
+        aspect-ratio: 4 / 3;
+    }
+}
+
