@@ -740,3 +740,44 @@ if (contactForm) {
     });
 })();
 
+
+/* ============================================================
+   EC CAROUSEL — 4-slide (Front/Back/Side/Close-up) 2026-02-21
+   ============================================================ */
+(function () {
+    const carousel = document.getElementById('ecCarousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.ofgallery-slide');
+    const dots   = carousel.querySelectorAll('.ofc-dot');
+    const labels = carousel.querySelectorAll('.ofc-label');
+    const total  = slides.length;
+    let current  = 0;
+
+    function goTo(n) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        labels[current].classList.remove('is-active');
+        current = (n + total) % total;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        labels[current].classList.add('is-active');
+    }
+
+    // Activate first slide
+    slides[0].classList.add('is-active');
+
+    carousel.querySelector('.ofc-prev').addEventListener('click', () => goTo(current - 1));
+    carousel.querySelector('.ofc-next').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+    // Touch swipe
+    let touchStartX = 0;
+    const track = carousel.querySelector('.ofgallery-carousel-track');
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+    }, { passive: true });
+})();
+

@@ -455,18 +455,73 @@
                 </div>
             </div>
 
-            <!-- Output Format Gallery (asymmetric: large-left + stacked-right) -->
+            <!-- Output Format Gallery — EC carousel 3:4 | IG portrait 3:4 | Ads 16:9 -->
             <div class="ofgallery fade-up">
 
-                <!-- LEFT: EC Multi-view (large) -->
+                <!-- LEFT: EC Multi-view 4-slide carousel (3:4) -->
                 <div class="ofgallery-main">
-                    <div class="ofgallery-img-wrap" data-dd-slot="ec">
-                        <img class="ofgallery-img" src="assets/images/usecase_ec.jpg" alt="EC Multi-view sample"
-                            draggable="false">
-                        <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
-                        <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
-                            aria-hidden="true">
-                    </div>
+                    <div class="ofgallery-carousel" id="ecCarousel">
+                        <div class="ofgallery-carousel-track">
+
+                            <!-- Slide 1: Front -->
+                            <div class="ofgallery-slide" data-slide="0">
+                                <div class="ofgallery-img-wrap" data-dd-slot="ec-1">
+                                    <img class="ofgallery-img" src="assets/images/usecase_ec.jpg" alt="Front view" draggable="false">
+                                    <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                                    <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Back -->
+                            <div class="ofgallery-slide" data-slide="1">
+                                <div class="ofgallery-img-wrap" data-dd-slot="ec-2">
+                                    <img class="ofgallery-img" src="assets/images/sample1.png" alt="Back view" draggable="false">
+                                    <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                                    <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Side -->
+                            <div class="ofgallery-slide" data-slide="2">
+                                <div class="ofgallery-img-wrap" data-dd-slot="ec-3">
+                                    <img class="ofgallery-img" src="assets/images/sample2.png" alt="Side view" draggable="false">
+                                    <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                                    <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Close-up -->
+                            <div class="ofgallery-slide" data-slide="3">
+                                <div class="ofgallery-img-wrap" data-dd-slot="ec-4">
+                                    <img class="ofgallery-img" src="assets/images/sample3.png" alt="Close-up" draggable="false">
+                                    <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                                    <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
+                                </div>
+                            </div>
+
+                        </div><!-- /track -->
+
+                        <!-- Nav: prev / dots / next -->
+                        <div class="ofc-nav">
+                            <button class="ofc-btn ofc-prev" type="button" aria-label="Previous">&#8592;</button>
+                            <div class="ofc-dots">
+                                <span class="ofc-dot is-active" data-dot="0"></span>
+                                <span class="ofc-dot" data-dot="1"></span>
+                                <span class="ofc-dot" data-dot="2"></span>
+                                <span class="ofc-dot" data-dot="3"></span>
+                            </div>
+                            <button class="ofc-btn ofc-next" type="button" aria-label="Next">&#8594;</button>
+                        </div>
+
+                        <!-- Slide labels (shown on current slide) -->
+                        <div class="ofc-labels">
+                            <span class="ofc-label is-active" data-label="0">Front</span>
+                            <span class="ofc-label" data-label="1">Back</span>
+                            <span class="ofc-label" data-label="2">Side</span>
+                            <span class="ofc-label" data-label="3">Close-up</span>
+                        </div>
+                    </div><!-- /carousel -->
+
                     <div class="ofgallery-footer">
                         <div class="ofgallery-label">
                             <span class="ofgallery-title">EC Multi-view</span>
@@ -479,40 +534,36 @@
                             <span class="ofcard-pill">Close-up</span>
                         </div>
                     </div>
-                </div>
+                </div><!-- /ofgallery-main -->
 
-                <!-- RIGHT: IG + Ads stacked -->
+                <!-- RIGHT: Instagram (3:4 portrait) + Ads (16:9) stacked -->
                 <div class="ofgallery-side">
 
-                    <!-- Instagram -->
+                    <!-- Instagram: portrait 3:4 -->
                     <div class="ofgallery-sub">
-                        <div class="ofgallery-img-wrap" data-dd-slot="ig">
-                            <img class="ofgallery-img" src="assets/images/usecase_sns.jpg" alt="Instagram sample"
-                                draggable="false">
-                            <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
-                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
-                                aria-hidden="true">
+                        <div class="ofgallery-img-wrap ofgallery-img-wrap--portrait" data-dd-slot="ig">
+                            <img class="ofgallery-img" src="assets/images/usecase_sns.jpg" alt="Instagram sample" draggable="false">
+                            <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
                         </div>
                         <div class="ofgallery-footer">
                             <div class="ofgallery-label">
                                 <span class="ofgallery-title">Instagram</span>
-                                <span class="ofgallery-ratio">1 : 1</span>
+                                <span class="ofgallery-ratio">3 : 4</span>
                             </div>
                             <div class="ofcard-pills">
+                                <span class="ofcard-pill">Portrait</span>
                                 <span class="ofcard-pill">Clean</span>
-                                <span class="ofcard-pill">Square</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Ads / Campaign -->
+                    <!-- Ads: landscape 16:9 -->
                     <div class="ofgallery-sub">
-                        <div class="ofgallery-img-wrap" data-dd-slot="ads">
-                            <img class="ofgallery-img" src="assets/images/usecase_ad_banner.png" alt="Ads sample"
-                                draggable="false">
-                            <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
-                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
-                                aria-hidden="true">
+                        <div class="ofgallery-img-wrap ofgallery-img-wrap--landscape" data-dd-slot="ads">
+                            <img class="ofgallery-img" src="assets/images/usecase_ad_banner.png" alt="Ads sample" draggable="false">
+                            <div class="ofgallery-hint" aria-hidden="true">Drop to replace</div>
+                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1" aria-hidden="true">
                         </div>
                         <div class="ofgallery-footer">
                             <div class="ofgallery-label">

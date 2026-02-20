@@ -2783,3 +2783,149 @@ body.dev-mode .dev-mode-indicator {
     min-height: 15vw;
 }
 
+
+/* =============================================================
+   OFGALLERY v2 — Carousel + correct aspect ratios (2026-02-21)
+   ============================================================= */
+
+/* Carousel wrapper */
+.ofgallery-carousel {
+    position: relative;
+    width: 100%;
+}
+
+/* Track — only show one slide at a time */
+.ofgallery-carousel-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+}
+
+/* Individual slides */
+.ofgallery-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+.ofgallery-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Image inside slide fills the 3:4 area */
+.ofgallery-slide .ofgallery-img-wrap {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: none;
+    min-height: unset;
+}
+
+/* Instagram portrait 3:4 */
+.ofgallery-img-wrap--portrait {
+    aspect-ratio: 3 / 4;
+    min-height: unset !important;
+}
+
+/* Ads landscape 16:9 — let the container set height via aspect-ratio */
+.ofgallery-img-wrap--landscape {
+    aspect-ratio: 16 / 9;
+    min-height: unset !important;
+}
+
+/* Carousel nav */
+.ofc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.ofc-btn {
+    background: none;
+    border: 1px solid #e4e4e7;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+    color: #18181b;
+    transition: background 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+}
+.ofc-btn:hover {
+    background: #f4f4f5;
+    border-color: #a1a1aa;
+}
+
+.ofc-dots {
+    display: flex;
+    gap: 5px;
+}
+.ofc-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #d4d4d8;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.ofc-dot.is-active {
+    background: #18181b;
+}
+
+/* Slide label overlay (bottom-left of image) */
+.ofc-labels {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    pointer-events: none;
+}
+.ofc-label {
+    display: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: rgba(24,24,27,0.55);
+    backdrop-filter: blur(4px);
+    padding: 3px 8px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+.ofc-label.is-active {
+    display: inline-block;
+}
+
+/* Right column: ensure portrait + landscape sizes work together */
+.ofgallery-sub .ofgallery-img-wrap--portrait {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.ofgallery-sub .ofgallery-img-wrap--landscape {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+/* Override base styles that set absolute positioning on the img */
+.ofgallery-img-wrap--portrait .ofgallery-img,
+.ofgallery-img-wrap--landscape .ofgallery-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
