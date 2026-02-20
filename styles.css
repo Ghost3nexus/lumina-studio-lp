@@ -2685,3 +2685,33 @@ body.dev-mode .dev-mode-indicator {
     }
 }
 
+
+/* =============================================================
+   LOGO — MiuMiu-style (Rubik 900 + lowercase + 5x size)
+   2026-02-20
+   ============================================================= */
+.logo-text {
+    font-family: 'Rubik', 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 5.625rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    color: var(--zinc-900);
+    line-height: 1;
+}
+
+.footer .logo-text {
+    color: var(--white);
+}
+
+/* Tighten nav when logo is large */
+.site-header .container {
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+}
+
