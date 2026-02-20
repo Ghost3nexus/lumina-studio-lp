@@ -153,7 +153,7 @@ button {
 
 .section-title,
 .kive-title {
-    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-size: clamp(2.1rem, 4.2vw, 2.8rem);
     font-weight: 650;
     /* Fallback to 600 if env missing */
     letter-spacing: -0.045em;
@@ -423,10 +423,10 @@ button {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 600;
     letter-spacing: -0.03em;
-    line-height: 1.15;
+    line-height: 1.1;
     color: var(--zinc-900);
     margin-bottom: 1.5rem;
 }
@@ -966,8 +966,8 @@ button {
 }
 
 .card-title {
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--zinc-900);
     margin-bottom: 0.5rem;
 }
@@ -1236,10 +1236,10 @@ button {
 }
 
 .mid-cta-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.4;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
     margin-bottom: 2rem;
 }
 
@@ -1829,13 +1829,13 @@ img[data-img-key]:hover+.dd-hover-overlay {
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
 
     .mosaic-grid {
@@ -1899,7 +1899,7 @@ body.dev-mode .dev-mode-indicator {
 }
 
 .kive-title {
-    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-size: clamp(2.5rem, 5vw, 3.25rem);
     font-weight: 650;
     letter-spacing: -0.045em;
     line-height: 1.1;
