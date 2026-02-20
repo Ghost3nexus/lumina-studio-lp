@@ -781,3 +781,98 @@ if (contactForm) {
     }, { passive: true });
 })();
 
+
+/* ============================================================
+   THUMBSTRIP — syncs with EC carousel, per-thumb D&D (2026-02-21)
+   ============================================================ */
+(function () {
+    const carousel   = document.getElementById('ecCarousel');
+    const thumbstrip = document.getElementById('ecThumbstrip');
+    if (!carousel || !thumbstrip) return;
+
+    const thumbs  = thumbstrip.querySelectorAll('.ofc-thumb');
+    const slides  = carousel.querySelectorAll('.ofgallery-slide');
+    const dots    = carousel.querySelectorAll('.ofc-dot');
+
+    // ── Navigate carousel from thumb click ───────────────────
+    thumbs.forEach(function (thumb, i) {
+        thumb.addEventListener('click', function (e) {
+            // Don't navigate if clicking the file input label
+            if (e.target.tagName === 'INPUT') return;
+            goToSlide(i);
+        });
+    });
+
+    function goToSlide(n) {
+        // Update slides
+        slides.forEach(function (s) { s.classList.remove('is-active'); });
+        slides[n] && slides[n].classList.add('is-active');
+        // Update dots
+        dots.forEach(function (d) { d.classList.remove('is-active'); });
+        dots[n] && dots[n].classList.add('is-active');
+        // Update thumbs active ring
+        thumbs.forEach(function (t) { t.classList.remove('is-active'); });
+        thumbs[n] && thumbs[n].classList.add('is-active');
+    }
+
+    // Patch existing carousel prev/next to also update thumbstrip
+    const prevBtn = carousel.querySelector('.ofc-prev');
+    const nextBtn = carousel.querySelector('.ofc-next');
+    let currentSlide = 0;
+    const total = slides.length;
+
+    function navigate(dir) {
+        currentSlide = (currentSlide + dir + total) % total;
+        goToSlide(currentSlide);
+    }
+    if (prevBtn) prevBtn.onclick = () => navigate(-1);
+    if (nextBtn) nextBtn.onclick = () => navigate(1);
+    dots.forEach(function (d, i) { d.onclick = () => { currentSlide = i; goToSlide(i); }; });
+
+    // ── D&D + file input on each thumbnail ───────────────────
+    thumbs.forEach(function (thumb, i) {
+        const input    = thumb.querySelector('.ofgallery-file-input');
+        const thumbImg = thumb.querySelector('.ofc-thumb-img');
+        // Corresponding carousel slide img
+        const slideWrap = slides[i] ? slides[i].querySelector('.ofgallery-img-wrap') : null;
+        const slideImg  = slideWrap ? slideWrap.querySelector('.ofgallery-img') : null;
+
+        function replaceImage(file) {
+            if (!file || !file.type.startsWith('image/')) return;
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const src = e.target.result;
+                if (thumbImg) thumbImg.src = src;
+                if (slideImg) slideImg.src = src;
+                // Navigate to the replaced slide so user sees result
+                currentSlide = i;
+                goToSlide(i);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // File input change
+        if (input) {
+            input.addEventListener('change', function () {
+                if (this.files && this.files[0]) replaceImage(this.files[0]);
+                this.value = '';
+            });
+        }
+
+        // Drag & drop
+        thumb.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            thumb.classList.add('is-over');
+        });
+        thumb.addEventListener('dragleave', function (e) {
+            if (!thumb.contains(e.relatedTarget)) thumb.classList.remove('is-over');
+        });
+        thumb.addEventListener('drop', function (e) {
+            e.preventDefault();
+            thumb.classList.remove('is-over');
+            const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+            if (file) replaceImage(file);
+        });
+    });
+})();
+
