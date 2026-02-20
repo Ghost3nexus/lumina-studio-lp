@@ -62,12 +62,12 @@
             <div class="hero-grid">
                 <!-- Left: Copy + CTA -->
                 <div class="hero-copy">
-                    <p class="hero-label">AI image studio for fashion ecommerce</p>
+                    <p class="hero-label">AI studio for fashion brands</p>
                     <h1 class="hero-title">
-                        No photo shoot.<br>Just new images.
+                        Make product images<br>without a photo shoot.
                     </h1>
                     <p class="hero-subtitle">
-                        商品写真から、着用・物撮り・広告用をまとめて作成。<br>更新・差し替えも、撮影待ちなし。
+                        商品写真から、着用・物撮り・広告素材まで一括生成。<br>撮影待ちなしで、更新と差し替えが回る。
                     </p>
                     <div class="hero-cta">
                         <a href="#contact" class="btn-primary btn-lg">無料デモを予約する</a>
@@ -148,6 +148,21 @@
                             <img class="studio-hero-img" data-img-key="hero-rotator-campaign"
                                 src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt=""
                                 draggable="false" />
+
+                            <!-- Hero UI Overlay (status + results) -->
+                            <div class="hero-ui-overlay" aria-hidden="true">
+                                <div class="hero-ui-preset-label">Active preset: Editorial Warm</div>
+                                <div class="hero-ui-status-pills">
+                                    <span class="hero-ui-pill">Queue</span>
+                                    <span class="hero-ui-pill is-live">Generating</span>
+                                    <span class="hero-ui-pill">Output</span>
+                                </div>
+                            </div>
+                            <div class="hero-ui-results-strip" aria-hidden="true">
+                                <div class="hero-ui-thumb"></div>
+                                <div class="hero-ui-thumb"></div>
+                                <div class="hero-ui-thumb"></div>
+                            </div>
 
                             <!-- Hover hint overlay (works with D&D + click) -->
                             <div class="studio-dd-hint" aria-hidden="true">Drop to replace</div>
@@ -440,54 +455,106 @@
                 </div>
             </div>
 
-            <!-- Sample Gallery -->
-            <div class="sample-gallery fade-up">
-                <div class="sample-large">
-                    <div class="sample-placeholder sample-gradient-alt">
-                        <span class="sample-label">EC Standard</span>
-                    </div>
-                </div>
-                <div class="sample-small">
-                    <div class="sample-placeholder sample-gradient-warm">
-                        <span class="sample-label">Instagram Clean</span>
-                    </div>
-                </div>
-                <div class="sample-small">
-                    <div class="sample-placeholder sample-gradient">
-                        <span class="sample-label">Ads Wide</span>
-                    </div>
-                </div>
-                <div class="sample-small">
-                    <div class="sample-placeholder sample-gradient-cool">
-                        <span class="sample-label">Editorial Warm</span>
-                    </div>
-                </div>
-                <div class="sample-large">
-                    <div class="sample-placeholder sample-gradient-alt">
-                        <span class="sample-label">Lookbook Style</span>
-                    </div>
-                </div>
-                <div class="sample-small">
-                    <div class="sample-placeholder"
-                        style="aspect-ratio: 21/9; position: relative; overflow: hidden; border-radius: 12px; border: 1px dashed rgba(0,0,0,0.12); padding: 0;">
-                        <img class="studio-hero-img is-active" data-img-key="preset_gallery"
-                            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Preset Gallery"
-                            style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;" />
+            <!-- Output Format Grid -->
+            <div class="output-format-grid fade-up">
 
-                        <div class="studio-empty-state" style="inset:0; margin:0; border:none;">
-                            <div class="empty-icon">
-                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="empty-text" style="margin-bottom:0;">
-                                <p class="empty-title" style="font-size:11px;">Drop preset image</p>
+                <!-- EC Multi-view -->
+                <div class="output-format-card">
+                    <div class="ofcard-preview ofcard-preview--ec">
+                        <div class="ofcard-preview-bar">
+                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
+                            <span class="ofbar-title">EC product page</span>
+                        </div>
+                        <div class="ofcard-preview-body">
+                            <div class="ofmock-portrait"></div>
+                            <div class="ofmock-stack">
+                                <div class="ofmock-thumb"></div>
+                                <div class="ofmock-thumb"></div>
+                                <div class="ofmock-thumb"></div>
                             </div>
                         </div>
-                        <div class="dd-hover-overlay" style="z-index: 2;">Click or Drop to replace</div>
+                    </div>
+                    <div class="ofcard-top">
+                        <div class="ofcard-title">EC Multi-view</div>
+                        <div class="ofcard-meta">
+                            <span class="ofcard-ratio-label">3 : 4</span>
+                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
+                        </div>
+                    </div>
+                    <div class="ofcard-pills">
+                        <span class="ofcard-pill">Front</span>
+                        <span class="ofcard-pill">Back</span>
+                        <span class="ofcard-pill">Side</span>
+                        <span class="ofcard-pill">Close-up</span>
+                        <span class="ofcard-pill">Detail</span>
+                    </div>
+                    <div class="ofcard-res">
+                        <button class="ofcard-res-btn" type="button">STD</button>
+                        <button class="ofcard-res-btn is-active" type="button">HD</button>
+                        <button class="ofcard-res-btn" type="button">MAX</button>
                     </div>
                 </div>
+
+                <!-- Instagram -->
+                <div class="output-format-card">
+                    <div class="ofcard-preview ofcard-preview--ig">
+                        <div class="ofcard-preview-bar">
+                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
+                            <span class="ofbar-title">Instagram feed</span>
+                        </div>
+                        <div class="ofcard-preview-body">
+                            <div class="ofmock-square"></div>
+                        </div>
+                    </div>
+                    <div class="ofcard-top">
+                        <div class="ofcard-title">Instagram</div>
+                        <div class="ofcard-meta">
+                            <span class="ofcard-ratio-label">1 : 1</span>
+                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
+                        </div>
+                    </div>
+                    <div class="ofcard-pills">
+                        <span class="ofcard-pill">Clean</span>
+                        <span class="ofcard-pill">Square</span>
+                        <span class="ofcard-pill">Lifestyle</span>
+                    </div>
+                    <div class="ofcard-res">
+                        <button class="ofcard-res-btn" type="button">STD</button>
+                        <button class="ofcard-res-btn is-active" type="button">HD</button>
+                        <button class="ofcard-res-btn" type="button">MAX</button>
+                    </div>
+                </div>
+
+                <!-- Ads / Campaign -->
+                <div class="output-format-card">
+                    <div class="ofcard-preview ofcard-preview--ads">
+                        <div class="ofcard-preview-bar">
+                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
+                            <span class="ofbar-title">Ad banner</span>
+                        </div>
+                        <div class="ofcard-preview-body">
+                            <div class="ofmock-wide"></div>
+                        </div>
+                    </div>
+                    <div class="ofcard-top">
+                        <div class="ofcard-title">Ads / Campaign</div>
+                        <div class="ofcard-meta">
+                            <span class="ofcard-ratio-label">16 : 9</span>
+                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
+                        </div>
+                    </div>
+                    <div class="ofcard-pills">
+                        <span class="ofcard-pill">Banner</span>
+                        <span class="ofcard-pill">Cinematic</span>
+                        <span class="ofcard-pill">Campaign</span>
+                    </div>
+                    <div class="ofcard-res">
+                        <button class="ofcard-res-btn" type="button">STD</button>
+                        <button class="ofcard-res-btn is-active" type="button">HD</button>
+                        <button class="ofcard-res-btn" type="button">MAX</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -500,8 +567,6 @@
                 御社の商品で、用途別の出力まで一緒に確認できます。</p>
             <div class="mid-cta-buttons fade-up">
                 <a href="#contact" class="btn-primary-light btn-lg">無料デモ予約</a>
-                <a href="https://lumina-fashion-studio.vercel.app/app/new" class="btn-secondary-light btn-lg"
-                    target="_blank" rel="noopener noreferrer">Studioを見る</a>
             </div>
             <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 1rem;">※デモでは “商品写真 → 生成 → 出力”
                 をその場で確認できます</p>
@@ -840,8 +905,7 @@
                         <h4>サポート</h4>
                         <ul>
                             <li><a href="#contact">お問い合わせ</a></li>
-                            <li><a href="https://lumina-fashion-studio.vercel.app/app/new" target="_blank"
-                                    rel="noopener noreferrer">Studio</a></li>
+                            <li><a href="#contact">デモを見る</a></li>
                         </ul>
                     </div>
                 </div>

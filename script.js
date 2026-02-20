@@ -632,3 +632,61 @@ if (contactForm) {
     // Initial check for Data Object Empty Overlays (invoked once files restore from LS)
     setTimeout(() => applyStep(0), 100);
 })();
+
+/* ============================================================
+   KIVE-LEVEL POLISH — added 2026-02-20
+   Appended below existing code; no existing events overwritten
+   ============================================================ */
+
+// A-2 (3): Studio-hero-card mouse-parallax tilt (max 3deg)
+(function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const card = document.getElementById('heroRotator');
+    if (!card) return;
+    const wrap = card.closest('.studio-hero-wrap');
+    if (!wrap) return;
+
+    function onMove(e) {
+        const rect = wrap.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = (e.clientX - cx) / (rect.width / 2);
+        const dy = (e.clientY - cy) / (rect.height / 2);
+        const rx = -dy * 3;
+        const ry = dx * 3;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+    }
+
+    function onLeave() {
+        card.style.transform = '';
+    }
+
+    // Mobile: skip
+    if (window.innerWidth > 768) {
+        wrap.addEventListener('mousemove', onMove, { passive: true });
+        wrap.addEventListener('mouseleave', onLeave);
+    }
+})();
+
+// C-2: Add scale to kive image crossfade via CSS class toggle
+(function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    // When kive steps switch, images fade+scale via CSS. We inject the class hook.
+    const style = document.createElement('style');
+    style.textContent = `
+        .kive-ui-viewport .studio-hero-img,
+        .kive-viewport-img {
+            transition: opacity 0.4s ease, transform 0.4s ease !important;
+        }
+        .kive-ui-viewport .studio-hero-img:not(.is-active),
+        .kive-viewport-img:not(.is-active) {
+            transform: scale(1.01);
+        }
+        .kive-ui-viewport .studio-hero-img.is-active,
+        .kive-viewport-img.is-active {
+            transform: scale(1);
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
