@@ -2774,3 +2774,12 @@ body.dev-mode .dev-mode-indicator {
     height: auto;
 }
 
+
+/* Footer SVG — force taller display */
+.footer-display-logo-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 15vw;
+}
+
