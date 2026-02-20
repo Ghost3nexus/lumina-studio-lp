@@ -5,88 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-    <title>LUMINA STUDIO - AIファッションフォト生成 × クリエイティブ制作サービス</title>
-    <meta name="description" content="商品画像1枚で、プロクオリティのモデル着用写真を生成。EC・SNS・広告に最適化されたビジュアルを、AIとサブスクで提供します。">
+    <title>LUMINA STUDIO – 撮影しない、ファッション撮影。</title>
+    <meta name="description" content="商品画像から、着用・物撮り・広告用素材まで。EC運用の撮影工程を生成に置き換える。ファッションD2C向けAI生成スタジオ。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Syne:wght@700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Apple-specific meta tags for iOS optimization -->
+    <!-- Apple-specific meta tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="LUMINA STUDIO">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="mobile-optimization.css">
-    <style>
-        .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            line-height: 1;
-            background: none;
-            -webkit-text-fill-color: initial;
-            text-transform: none;
-        }
-
-        .logo-main {
-            font-family: 'Comfortaa', cursive !important;
-            font-weight: 700;
-            font-size: 2.2rem;
-            color: #fff;
-            text-transform: lowercase;
-            letter-spacing: -0.05em;
-            margin-bottom: -5px;
-        }
-
-        .logo-sub {
-            font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.3em;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            justify-content: center;
-            position: relative;
-            padding-left: 0.3em;
-        }
-
-        .logo-sub::before,
-        .logo-sub::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background-color: #fff;
-            margin: 0 8px;
-            opacity: 0.8;
-        }
-
-        /* Footer logo specific overrides if needed */
-        .footer-logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            line-height: 1;
-            margin-bottom: var(--spacing-sm);
-            width: fit-content;
-        }
-
-        .footer-logo .logo-main,
-        .footer-logo .logo-sub {
-            color: #fff;
-        }
-
-        .footer-logo .logo-sub::before,
-        .footer-logo .logo-sub::after {
-            background-color: #fff;
-        }
-    </style>
-    <script src="images-config.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17948601738"></script>
@@ -99,13 +31,12 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- ========== Header (Sticky) ========== -->
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-content">
                 <a href="#" class="logo">
-                    <span class="logo-main">lumina</span>
-                    <span class="logo-sub">STUDIO</span>
+                    <span class="logo-text">LUMINA STUDIO</span>
                 </a>
                 <button class="mobile-menu-toggle" aria-label="メニュー">
                     <span></span>
@@ -113,645 +44,804 @@
                     <span></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="#ai-service">AI生成</a></li>
-                    <li><a href="#subscription">サブスク</a></li>
+                    <li><a href="#features">機能</a></li>
+                    <li><a href="#how-it-works">ワークフロー</a></li>
+                    <li><a href="#why-lumina">なぜLUMINA</a></li>
                     <li><a href="#pricing">料金</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact" class="btn-primary">お問い合わせ</a></li>
+                    <li><a href="#contact" class="btn-primary btn-nav">無料デモ予約</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Banner Section -->
-    <section class="hero-banner">
-        <img src="assets/images/hero-main.jpg" alt="LUMINA STUDIO - AI Fashion Photography" class="hero-banner-image">
-    </section>
-
-    <!-- Hero Content Section -->
-    <section class="hero-content-section">
+    <!-- ========== Hero (2-Column) ========== -->
+    <section class="hero-section">
+        <div class="studio-hero-bg-grid" aria-hidden="true"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title fade-up">
-                    撮影しない時代の、<br>
-                    <span class="gradient-text">ファッションフォト。</span>
-                </h1>
-                <p class="hero-subtitle fade-up">
-                    物撮りも、モデル生成も、これひとつ。<br>
-                    ファッションEC特化のクリエイティブ・パートナー。
-                </p>
-                <div class="hero-cta fade-up">
-                    <a href="#contact" class="btn-large btn-primary">無料相談・デモ依頼</a>
-                    <a href="#ai-service" class="btn-large btn-secondary">サービスを見る</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem-section">
-        <div class="container">
-            <h2 class="section-title fade-up">ファッションEC運用、<br>こんな課題ありませんか？</h2>
-            <div class="problem-grid">
-                <div class="problem-card fade-up">
-                    <div class="problem-icon">
-                        <img src="assets/images/icons/cost.png" alt="撮影コスト" loading="lazy">
-                    </div>
-                    <h3>撮影コストが高い</h3>
-                    <p>モデル・カメラマン・スタジオの手配で、毎回数十万円のコストが発生</p>
-                </div>
-                <div class="problem-card fade-up">
-                    <div class="problem-icon">
-                        <img src="assets/images/icons/time.png" alt="時間コスト" loading="lazy">
-                    </div>
-                    <h3>短サイクル対応が困難</h3>
-                    <p>小ロット・シーズンごとの撮影スケジュール調整が難しい</p>
-                </div>
-                <div class="problem-card fade-up">
-                    <div class="problem-icon">
-                        <img src="assets/images/icons/volume.png" alt="大量撮影" loading="lazy">
-                    </div>
-                    <h3>商品数が多すぎる</h3>
-                    <p>全商品のビジュアル更新が追いつかず、売上機会を逃している</p>
-                </div>
-                <div class="problem-card fade-up">
-                    <div class="problem-icon">
-                        <img src="assets/images/icons/creative.png" alt="クリエイティブ制作" loading="lazy">
-                    </div>
-                    <h3>SNS・広告用制作が負担</h3>
-                    <p>EC以外にも、Instagram・TikTok・バナー用のクリエイティブが必要</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Service Section -->
-    <section id="ai-service" class="ai-service-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">LUMINA STUDIO</span>
-                <h2 class="section-title fade-up">AIファッションフォト生成</h2>
-                <p class="section-description fade-up">
-                    商品画像をアップロードするだけで、プロクオリティのモデル着用ファッションフォトを高精度に生成。<br>
-                    撮影コスト・モデル手配・スタジオ確保の負担を大幅削減します。
-                </p>
-            </div>
-
-            <div class="how-it-works">
-                <h3 class="subsection-title">使い方は簡単3ステップ</h3>
-                <div class="steps-grid">
-                    <div class="step-card fade-up">
-                        <div class="step-number">01</div>
-                        <h4>商品画像をアップロード</h4>
-                        <p>フラットレイまたはマネキン着用の商品画像を用意</p>
-                    </div>
-                    <div class="step-card fade-up">
-                        <div class="step-number">02</div>
-                        <h4>モデル・背景を選択</h4>
-                        <p>多様なモデル・ポーズ・背景から最適なものを選択</p>
-                    </div>
-                    <div class="step-card fade-up">
-                        <div class="step-number">03</div>
-                        <h4>高精度な画像を生成</h4>
-                        <p>数分でプロクオリティのファッションフォトが完成</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery-section">
-                <h3 class="subsection-title">生成サンプル</h3>
-                <div class="gallery-marquee">
-                    <div class="gallery-track">
-                        <!-- Samples 1-20 (First Set) -->
-                        <div class="gallery-item"><img src="assets/images/sample1.png" alt="Sample 1" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample2.png" alt="Sample 2" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample3.png" alt="Sample 3" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample4.png" alt="Sample 4" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample5.png" alt="Sample 5" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample6.png" alt="Sample 6" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample7.png" alt="Sample 7" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample8.png" alt="Sample 8" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample9.png" alt="Sample 9" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample10.png" alt="Sample 10" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample11.png" alt="Sample 11" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample12.png" alt="Sample 12" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample13.png" alt="Sample 13" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample14.png" alt="Sample 14" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample15.png" alt="Sample 15" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample16.png" alt="Sample 16" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample17.png" alt="Sample 17" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample18.png" alt="Sample 18" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample19.png" alt="Sample 19" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample20.png" alt="Sample 20" loading="lazy">
-                        </div>
-
-                        <!-- Samples 1-20 (Second Set for Seamless Loop) -->
-                        <div class="gallery-item"><img src="assets/images/sample1.png" alt="Sample 1" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample2.png" alt="Sample 2" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample3.png" alt="Sample 3" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample4.png" alt="Sample 4" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample5.png" alt="Sample 5" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample6.png" alt="Sample 6" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample7.png" alt="Sample 7" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample8.png" alt="Sample 8" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample9.png" alt="Sample 9" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample10.png" alt="Sample 10" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample11.png" alt="Sample 11" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample12.png" alt="Sample 12" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample13.png" alt="Sample 13" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample14.png" alt="Sample 14" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample15.png" alt="Sample 15" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample16.png" alt="Sample 16" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample17.png" alt="Sample 17" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample18.png" alt="Sample 18" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample19.png" alt="Sample 19" loading="lazy">
-                        </div>
-                        <div class="gallery-item"><img src="assets/images/sample20.png" alt="Sample 20" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card fade-up">
-                    <div class="feature-icon">
-                        <img src="assets/images/icons/trend.png" alt="トレンド感" loading="lazy">
-                    </div>
-                    <h4>トレンド感のある表現</h4>
-                    <p>最新のファッショントレンドを反映した自然な着用イメージ</p>
-                </div>
-                <div class="feature-card fade-up">
-                    <div class="feature-icon">
-                        <img src="assets/images/icons/target.png" alt="Web最適化" loading="lazy">
-                    </div>
-                    <h4>EC最適化された構図</h4>
-                    <p>商品の魅力を最大限に引き出すライティング・アングル</p>
-                </div>
-                <div class="feature-card fade-up">
-                    <div class="feature-icon">
-                        <img src="assets/images/icons/speed.png" alt="スピード生成" loading="lazy">
-                    </div>
-                    <h4>即時生成</h4>
-                    <p>撮影不要で数分以内に高品質な画像を取得</p>
-                </div>
-                <div class="feature-card fade-up">
-                    <div class="feature-icon">
-                        <img src="assets/images/icons/saving.png" alt="コスト削減" loading="lazy">
-                    </div>
-                    <h4>コスト削減90%</h4>
-                    <p>従来の撮影コストを最大90%削減可能</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Subscription Service Section -->
-    <section id="subscription" class="subscription-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">LUMINA STUDIO</span>
-                <h2 class="section-title fade-up">サブスクリプション型<br>クリエイティブ制作サービス</h2>
-                <p class="section-description fade-up">
-                    「AIツール」だけではありません。<br>
-                    面倒な商品撮影から、専属モデルの生成、サムネイル制作まで、<br>
-                    EC運用に必要なクリエイティブワークをワンストップで提供します。
-                </p>
-            </div>
-
-            <div class="service-features">
-                <div class="service-card glass-card fade-up">
-                    <div class="service-icon">
-                        <img src="assets/images/icons/volume.png" alt="物撮り代行" loading="lazy">
-                    </div>
-                    <h3>物撮り代行</h3>
-                    <p>EC用の商品単体撮影（背景処理含む）をプロフェッショナルに対応</p>
-                    <ul class="service-list">
-                        <li>月15型まで定額対応</li>
-                        <li>追加撮影も柔軟に対応</li>
-                        <li>背景処理・レタッチ込み</li>
-                    </ul>
-                </div>
-                <div class="service-card glass-card fade-up">
-                    <div class="service-icon">
-                        <img src="assets/images/icons/creative.png" alt="クリエイティブ撮影" loading="lazy">
-                    </div>
-                    <h3>クリエイティブ撮影</h3>
-                    <p>SNS・広告・バナー用のキービジュアル制作</p>
-                    <ul class="service-list">
-                        <li>モデル着用撮影</li>
-                        <li>ブランドトーンに合わせた世界観設計</li>
-                        <li>Instagram / TikTok / 広告バナー対応</li>
-                    </ul>
-                </div>
-                <div class="service-card glass-card fade-up">
-                    <div class="service-icon">
-                        <img src="assets/images/icons/cost.png" alt="制作相談" loading="lazy">
-                    </div>
-                    <h3>制作相談（無制限）</h3>
-                    <p>撮影・制作に関する相談を無制限で受付</p>
-                    <ul class="service-list">
-                        <li>ブランド・商品理解を前提とした提案</li>
-                        <li>優先対応</li>
-                        <li>柔軟なディレクション</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Creative Supervision Section -->
-    <section class="creative-supervision-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">CREATIVE SUPERVISION</span>
-                <h2 class="section-title fade-up">Creative Supervision</h2>
-                <div class="supervision-content fade-up">
-                    <p class="supervision-text">
-                        LUMINA STUDIOは、東京を拠点とする制作会社 COVERS の監修のもと設計されています。
+            <div class="hero-grid">
+                <!-- Left: Copy + CTA -->
+                <div class="hero-copy">
+                    <p class="hero-label">AI image studio for fashion ecommerce</p>
+                    <h1 class="hero-title">
+                        No photo shoot.<br>Just new images.
+                    </h1>
+                    <p class="hero-subtitle">
+                        商品写真から、着用・物撮り・広告用をまとめて作成。<br>更新・差し替えも、撮影待ちなし。
                     </p>
-                    <p class="supervision-text">
-                        ファッション・ブランド領域における構造設計、ビジュアルトーン、UI/UXの知見を共有し、<br>
-                        AI生成であっても一貫した世界観を構築します。
-                    </p>
-                    <p class="supervision-text">
-                        単なる生成ツールではなく、<br>
-                        ブランド基準を踏まえた制作体制を整えています。
-                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary btn-lg">無料デモを予約する</a>
+                        <a href="#how-it-works" class="btn-secondary btn-lg">ワークフローを見る</a>
+                    </div>
+                    <div class="hero-note">
+                        <ul class="mini-proof">
+                            <li>Upload once</li>
+                            <li>EC • IG • Ads</li>
+                            <li>Presets keep your look</li>
+                        </ul>
+                        <style>
+                            .mini-proof {
+                                display: flex;
+                                gap: 1rem;
+                                font-size: 0.75rem;
+                                color: var(--zinc-500);
+                                flex-wrap: wrap;
+                                margin-top: 1rem;
+                            }
+
+                            .mini-proof li {
+                                position: relative;
+                                padding-left: 1rem;
+                            }
+
+                            .mini-proof li::before {
+                                content: "•";
+                                position: absolute;
+                                left: 0;
+                                color: var(--zinc-400);
+                            }
+                        </style>
+                    </div>
                 </div>
-                <div class="supervision-cta fade-up">
-                    <a href="https://www.covers.tokyo/" target="_blank" rel="noopener noreferrer"
-                        class="btn-large btn-secondary">COVERS Official Site →</a>
+
+                <!-- Right: Studio UI Card -->
+                <div class="studio-hero-wrap fade-up">
+                    <div class="studio-hero-glow" aria-hidden="true"></div>
+
+                    <div class="studio-hero-card" id="heroRotator" data-rotator="1">
+                        <!-- Faux window bar -->
+                        <div class="studio-windowbar" aria-hidden="true">
+                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                            <span class="studio-windowbar-title">Preview Results</span>
+                        </div>
+
+                        <!-- Tabs (click to pin state) -->
+                        <div class="studio-hero-tabs" role="tablist" aria-label="Preview tabs">
+                            <button class="studio-tab is-active" type="button" data-rotator-tab="ec">EC / 3:4</button>
+                            <button class="studio-tab" type="button" data-rotator-tab="campaign">Campaign /
+                                16:9</button>
+                        </div>
+
+                        <!-- Overlaid images: MUST ALWAYS EXIST in DOM -->
+                        <div class="studio-hero-stage">
+                            <!-- Empty State UI -->
+                            <div class="studio-empty-state" aria-hidden="true">
+                                <div class="empty-icon">
+                                    <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div class="empty-text">
+                                    <p class="empty-title">Drop image to replace</p>
+                                    <p class="empty-sub">or click to upload</p>
+                                </div>
+                                <div class="empty-dummy-ui">
+                                    <span class="dummy-label">Output</span>
+                                    <span class="dummy-label">Queue</span>
+                                </div>
+                            </div>
+
+                            <img class="studio-hero-img is-active" data-img-key="hero-rotator-ec"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt=""
+                                draggable="false" />
+                            <img class="studio-hero-img" data-img-key="hero-rotator-campaign"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt=""
+                                draggable="false" />
+
+                            <!-- Hover hint overlay (works with D&D + click) -->
+                            <div class="studio-dd-hint" aria-hidden="true">Drop to replace</div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="studio-rotator-progress" aria-hidden="true">
+                            <div class="studio-rotator-bar" id="heroRotatorBar"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EC Specialization Section -->
-    <section class="ec-specialization-section">
+    <!-- ========== Kive Features ========== -->
+    <section id="features" class="section-white kive-features">
+        <div class="container">
+            <div class="kive-head">
+                <span class="section-label">WORKFLOW</span>
+                <h2 class="kive-title">Input → Presets → Output</h2>
+                <p class="kive-sub">ささげ（撮影）の判断基準をプリセット化。SKUが増えても、画像制作が回る状態に。</p>
+            </div>
+
+            <!-- Kive-style sticky UI + scrolling narrative -->
+            <div class="kive-wrap">
+                <!-- Left: narrative steps -->
+                <div class="kive-steps" aria-label="Feature steps">
+                    <button class="kive-step is-active" type="button" data-kive-step="0">
+                        <div class="kive-step-kicker">① Input</div>
+                        <div class="kive-step-body">
+                            <div class="kive-step-title">ガーメントをアップロード</div>
+                            <div class="kive-step-desc">
+                                Top・Bottom・Outer・Inner・Shoesの5カテゴリに対応。商品写真を最大3アングル（正面・背面・ディテール）まで登録でき、生成精度が向上します。</div>
+                        </div>
+                    </button>
+
+                    <button class="kive-step" type="button" data-kive-step="1">
+                        <div class="kive-step-kicker">② Brand</div>
+                        <div class="kive-step-body">
+                            <div class="kive-step-title">ブランドプロファイルを設定</div>
+                            <div class="kive-step-desc">スタイル・トーン・ムードをプリセットとして保存。担当者が変わっても、ブランドのビジュアルトーンが一切ぶれません。</div>
+                        </div>
+                    </button>
+
+                    <button class="kive-step" type="button" data-kive-step="2">
+                        <div class="kive-step-kicker">③ Studio</div>
+                        <div class="kive-step-body">
+                            <div class="kive-step-title">撮影条件をセット</div>
+                            <div class="kive-step-desc">
+                                スタジオプリセット・ショットタイプ・焦点距離・シード値を固定。背景・光・空気感を「撮影ルール」としてロックし、何回生成しても同じ世界観を維持します。</div>
+                        </div>
+                    </button>
+
+                    <button class="kive-step" type="button" data-kive-step="3">
+                        <div class="kive-step-kicker">④ Model → ⑤ Output</div>
+                        <div class="kive-step-body">
+                            <div class="kive-step-title">モデル設定 → 用途別に一括出力</div>
+                            <div class="kive-step-desc">性別・体型・ポーズなどをワンタップで設定後、EC用マルチビュー（正面/背面/横/バストアップ）・Instagram
+                                1:1・Ads 16:9を同時生成。STD/HD/MAX解像度で即ダウンロード。</div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Right: sticky UI frame (changes image + chips per step) -->
+                <div class="kive-sticky">
+                    <div class="kive-ui-frame" id="kiveUIFrame">
+                        <div class="kive-ui-topbar">
+                            <div class="kive-ui-dots"><span></span><span></span><span></span></div>
+                            <div class="kive-ui-title">LUMINA Studio</div>
+                            <div class="kive-ui-actions">
+                                <span class="kive-pill" id="kivePillA">Preset</span>
+                                <span class="kive-pill" id="kivePillB">EC • 3:4</span>
+                                <span class="kive-pill" id="kivePillC">HD</span>
+                            </div>
+                        </div>
+
+                        <!-- Image viewport with D&D -->
+                        <div class="kive-ui-viewport" data-dd-zone="1">
+                            <img class="kive-viewport-img is-active" data-img-key="feature_ui_0"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature UI step 1"
+                                draggable="false" />
+                            <img class="kive-viewport-img" data-img-key="feature_ui_1"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature UI step 2"
+                                draggable="false" />
+                            <img class="kive-viewport-img" data-img-key="feature_ui_2"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature UI step 3"
+                                draggable="false" />
+                            <img class="kive-viewport-img" data-img-key="feature_ui_3"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature UI step 4"
+                                draggable="false" />
+
+                            <!-- Empty state overlay (shows until that step image is set) -->
+                            <div class="kive-empty" id="kiveEmpty">
+                                <div class="kive-empty-inner">
+                                    <div class="kive-empty-grid"></div>
+                                    <div class="kive-empty-card">
+                                        <div class="kive-icon">
+                                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div class="kive-empty-title">スクリーンショットをドロップ</div>
+                                        <div class="kive-empty-desc">クリックまたはドロップで画像を挿入（PNG/JPEG/WebP）</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dd-hover-overlay">クリック・ドロップで変更</div>
+                        </div>
+
+                        <div class="kive-ui-footer">
+                            <div class="kive-metrics">
+                                <div class="kive-metric"><span class="n">3</span><span class="l">出力数</span></div>
+                                <div class="kive-metric"><span class="n">Live</span><span class="l">キュー</span></div>
+                                <div class="kive-metric"><span class="n">Locked</span><span class="l">一貫性</span></div>
+                            </div>
+                            <div class="kive-footer-cta">
+                                <a class="btn-primary btn-sm" href="#contact">無料デモを予約</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- small thumbnails (optional, still D&D) -->
+                    <div class="kive-thumb-row">
+                        <div class="kive-thumb" data-dd-zone="1">
+                            <img data-img-key="feature_thumb_a"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature thumb a"
+                                draggable="false" />
+                            <div class="kive-thumb-empty">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="dd-hover-overlay">差し替え</div>
+                        </div>
+                        <div class="kive-thumb" data-dd-zone="1">
+                            <img data-img-key="feature_thumb_b"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature thumb b"
+                                draggable="false" />
+                            <div class="kive-thumb-empty">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="dd-hover-overlay">差し替え</div>
+                        </div>
+                        <div class="kive-thumb" data-dd-zone="1">
+                            <img data-img-key="feature_thumb_c"
+                                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Feature thumb c"
+                                draggable="false" />
+                            <div class="kive-thumb-empty">
+                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="dd-hover-overlay">差し替え</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Problems (4 Cards) ========== -->
+    <section class="section-alt" id="problems">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">EC SPECIALIZED</span>
-                <h2 class="section-title fade-up">なぜファッションEC特化なのか</h2>
-                <p class="section-description fade-up">
-                    一般的なAI画像生成ツールとは異なり、LUMINA STUDIOはファッションECに必要な<br>
-                    細かな調整機能と、プロの制作会社のノウハウを組み込んでいます。
-                </p>
+                <p class="section-label">Production is the bottleneck.</p>
+                <h2 class="section-title fade-up">伸びるのは、制作コストだけ。</h2>
+                <p class="section-desc fade-up">売上の前に、撮影が詰まる。<br>ECのボトルネックは、いつも“画像”。</p>
+            </div>
+            <div class="card-grid card-grid-4 fade-up">
+                <div class="feature-card">
+                    <div class="card-icon-circle">$</div>
+                    <div class="card-title">コスト</div>
+                    <p class="card-desc">撮影は一回で10万円超。更新するほど赤字。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div class="card-title">納期</div>
+                    <p class="card-desc">撮影待ちで発売が遅れる。機会損失が積もる。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+                        </svg>
+                    </div>
+                    <div class="card-title">スケール</div>
+                    <p class="card-desc">SKUが増えるほど、画像制作が追いつかない。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <div class="card-title">一貫性</div>
+                    <p class="card-desc">撮る人が変わると、ブランドがブレる。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Features / Generation ========== -->
+    <section class="section-white" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">HOW IT WORKS</p>
+                <h2 class="section-title fade-up">From product photo to PDP assets.</h2>
+                <p class="section-desc fade-up">撮影の"都度判断"を、プリセットと出力設計に置き換える。更新・差し替えが前提のフローへ。</p>
             </div>
 
-            <div class="ec-features-grid">
-                <div class="ec-feature-card fade-up">
-                    <div class="ec-feature-icon">
-                        <img src="assets/images/icons/target.png" alt="編集機能" loading="lazy">
-                    </div>
-                    <h3>高度な編集機能</h3>
-                    <p>ポージング、モデルの向き、表情、背景まで細かく指定可能。EC商品ページに最適化された構図を実現します。</p>
+            <!-- Steps -->
+            <div class="steps-row fade-up">
+                <div class="step-item">
+                    <span class="step-number">01</span>
+                    <span class="step-text">Input<br><span
+                            style="font-size: 0.75rem; color: var(--zinc-500); font-weight: normal;">5カテゴリはTop/Bottom/Outer/Inner/Shoes。最大3アングル登録で精度向上。</span></span>
                 </div>
-
-                <div class="ec-feature-card fade-up">
-                    <div class="ec-feature-icon">
-                        <img src="assets/images/icons/trend.png" alt="ジャンル対応" loading="lazy">
-                    </div>
-                    <h3>ジャンル・雰囲気の指定</h3>
-                    <p>カジュアル、フォーマル、ストリート、モード系など、ブランドのトーンに合わせたモデルの雰囲気を細かく調整できます。</p>
+                <div class="step-divider"></div>
+                <div class="step-item">
+                    <span class="step-number">02–03</span>
+                    <span class="step-text">Brand / Studio<br><span
+                            style="font-size: 0.75rem; color: var(--zinc-500); font-weight: normal;">ブランドプロファイル・Studioプリセットで撮影条件を固定。</span></span>
                 </div>
-
-                <div class="ec-feature-card fade-up">
-                    <div class="ec-feature-icon">
-                        <img src="assets/images/icons/creative.png" alt="制作会社" loading="lazy">
-                    </div>
-                    <h3>プロの制作会社監修</h3>
-                    <p>ファッションフォトやECビジュアル制作に強い制作会社のアドバイスを得て開発。現場で求められるクオリティを実現しています。</p>
+                <div class="step-divider"></div>
+                <div class="step-item">
+                    <span class="step-number">04–05</span>
+                    <span class="step-text">Model / Output<br><span
+                            style="font-size: 0.75rem; color: var(--zinc-500); font-weight: normal;">モデル設定後、EC/SNS/Adsを同時生成。</span></span>
                 </div>
             </div>
 
-            <div class="comparison-highlight fade-up">
-                <h3>他社AIツールとの違い</h3>
-                <div class="comparison-points">
-                    <div class="comparison-point">
-                        <span class="comparison-label">一般的なAIツール</span>
-                        <p>汎用的な画像生成のみ。EC向けの細かい調整ができず、プロンプトの試行錯誤が必要。</p>
+            <!-- Features Cards -->
+            <div class="card-grid card-grid-3 fade-up">
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="9" y1="21" x2="9" y2="9" />
+                        </svg>
                     </div>
-                    <div class="comparison-point highlight">
-                        <span class="comparison-label">LUMINA STUDIO</span>
-                        <p>ファッションEC専用の編集機能を搭載。ポージング・向き・雰囲気を直感的に指定でき、即座にEC最適化された画像を生成。</p>
+                    <div class="card-title">Studio Preset</div>
+                    <p class="card-desc">スタジオプリセット・シード値・焦点距離で撮影条件を完全固定。<br>背景・光・空気感を「撮影ルール」としてロックの属人性を排除。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <div class="card-title">Multi-View Output</div>
+                    <p class="card-desc">EC用に正面/背面/横/バストアップ/ボトム詳細の5ビューを同時生成。<br>Instagram 1:1・Ads
+                        16:9・STD/HD/MAX解像度にも対応。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                            <line x1="16" y1="8" x2="2" y2="22" />
+                            <line x1="17.5" y1="15" x2="9" y2="15" />
+                        </svg>
+                    </div>
+                    <div class="card-title">AI Edit & Regenerate</div>
+                    <p class="card-desc">テキスト指示でAI編集、１枚だけ再生成。<br>撮影に戻ることなく、広告・テスト・シーズン切り替えに対応。</p>
+                </div>
+            </div>
+
+            <!-- Sample Gallery -->
+            <div class="sample-gallery fade-up">
+                <div class="sample-large">
+                    <div class="sample-placeholder sample-gradient-alt">
+                        <span class="sample-label">EC Standard</span>
+                    </div>
+                </div>
+                <div class="sample-small">
+                    <div class="sample-placeholder sample-gradient-warm">
+                        <span class="sample-label">Instagram Clean</span>
+                    </div>
+                </div>
+                <div class="sample-small">
+                    <div class="sample-placeholder sample-gradient">
+                        <span class="sample-label">Ads Wide</span>
+                    </div>
+                </div>
+                <div class="sample-small">
+                    <div class="sample-placeholder sample-gradient-cool">
+                        <span class="sample-label">Editorial Warm</span>
+                    </div>
+                </div>
+                <div class="sample-large">
+                    <div class="sample-placeholder sample-gradient-alt">
+                        <span class="sample-label">Lookbook Style</span>
+                    </div>
+                </div>
+                <div class="sample-small">
+                    <div class="sample-placeholder"
+                        style="aspect-ratio: 21/9; position: relative; overflow: hidden; border-radius: 12px; border: 1px dashed rgba(0,0,0,0.12); padding: 0;">
+                        <img class="studio-hero-img is-active" data-img-key="preset_gallery"
+                            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Preset Gallery"
+                            style="width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;" />
+
+                        <div class="studio-empty-state" style="inset:0; margin:0; border:none;">
+                            <div class="empty-icon">
+                                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="empty-text" style="margin-bottom:0;">
+                                <p class="empty-title" style="font-size:11px;">Drop preset image</p>
+                            </div>
+                        </div>
+                        <div class="dd-hover-overlay" style="z-index: 2;">Click or Drop to replace</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-    <section class="comparison-section">
+    <!-- ========== Mid CTA ========== -->
+    <section class="section-dark mid-cta">
         <div class="container">
-            <h2 class="section-title fade-up">従来の撮影 vs LUMINA</h2>
-            <div class="comparison-table-wrapper">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th class="highlight-column">LUMINA STUDIO</th>
-                            <th>他社AIツール</th>
-                            <th>従来の撮影代行</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="row-label">商品写真</td>
-                            <td class="highlight-column"><span class="check">✓</span> <strong>物撮り代行込み</strong></td>
-                            <td><span class="cross">✗</span> 自分で撮影が必要</td>
-                            <td><span class="check">✓</span> プロが撮影</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">モデル作成</td>
-                            <td class="highlight-column"><span class="check">✓</span> <strong>専属モデル制作</strong></td>
-                            <td><span class="info">△</span> 毎回プロンプト調整</td>
-                            <td><span class="cross">✗</span> モデル手配必須</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">月額コスト</td>
-                            <td class="highlight-column"><span class="check">✓</span> <strong>¥9,800〜</strong></td>
-                            <td><span class="info">△</span> ツール代 + 工数</td>
-                            <td><span class="cross">✗</span> ¥50,000〜</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">クオリティ</td>
-                            <td class="highlight-column"><span class="check">✓</span> <strong>プロ素材 × 高精度AI</strong></td>
-                            <td><span class="cross">✗</span> 素人素材 × AI</td>
-                            <td><span class="check">✓</span> 高品質</td>
-                        </tr>
-                        <tr>
-                            <td class="row-label">手間</td>
-                            <td class="highlight-column"><span class="check">✓</span> <strong>丸投げOK</strong></td>
-                            <td><span class="cross">✗</span> 習得に時間がかかる</td>
-                            <td><span class="info">△</span> 打ち合わせ等</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="mid-cta-title fade-up" style="color: var(--white);">撮影に戻るの、もうやめよか。</h2>
+            <p class="section-desc fade-up" style="color: rgba(255,255,255,0.7); margin-bottom: 2rem;">
+                御社の商品で、用途別の出力まで一緒に確認できます。</p>
+            <div class="mid-cta-buttons fade-up">
+                <a href="#contact" class="btn-primary-light btn-lg">無料デモ予約</a>
+                <a href="https://lumina-fashion-studio.vercel.app/app/new" class="btn-secondary-light btn-lg"
+                    target="_blank" rel="noopener noreferrer">Studioを見る</a>
             </div>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 1rem;">※デモでは “商品写真 → 生成 → 出力”
+                をその場で確認できます</p>
         </div>
     </section>
 
-    <!-- Use Cases Section -->
-    <section class="use-cases-section">
+    <!-- ========== Why Fashion EC (3 Cards) ========== -->
+    <section class="section-alt" id="why-lumina">
         <div class="container">
-            <h2 class="section-title fade-up">活用シーン</h2>
-            <div class="use-cases-grid">
-                <div class="use-case-card fade-up">
-                    <div class="use-case-image">
-                        <img src="assets/images/usecase_ec.png" alt="EC商品画像" loading="lazy">
+            <div class="section-header">
+                <p class="section-label">Why LUMINA</p>
+                <h2 class="section-title fade-up">ECの現場で、本当に使える。</h2>
+                <p class="section-desc fade-up">「それっぽい画像」じゃなく、ECで稼働する画像を作るために。</p>
+            </div>
+            <div class="card-grid card-grid-3 fade-up">
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg>
                     </div>
-                    <div class="use-case-content">
-                        <h3>EC商品画像</h3>
-                        <p>商品ページのメインビジュアルとして、モデル着用写真を掲載。購買意欲を高め、CVR向上に貢献します。</p>
-                    </div>
+                    <div class="card-title">EC マルチビュー出力</div>
+                    <p class="card-desc">PDP必須の正面/背面/横/バストアップ/ボトム詳細を5ビュー同時生成。第一印象で振り落とさない要因を構造的に。</p>
                 </div>
-                <div class="use-case-card fade-up">
-                    <div class="use-case-image">
-                        <img src="assets/images/usecase_sns.png" alt="SNS投稿" loading="lazy">
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                            <rect x="9" y="9" width="6" height="6" />
+                            <line x1="9" y1="1" x2="9" y2="4" />
+                            <line x1="15" y1="1" x2="15" y2="4" />
+                            <line x1="9" y1="20" x2="9" y2="23" />
+                            <line x1="15" y1="20" x2="15" y2="23" />
+                            <line x1="20" y1="9" x2="23" y2="9" />
+                            <line x1="20" y1="14" x2="23" y2="14" />
+                            <line x1="1" y1="9" x2="4" y2="9" />
+                            <line x1="1" y1="14" x2="4" y2="14" />
+                        </svg>
                     </div>
-                    <div class="use-case-content">
-                        <h3>SNS投稿</h3>
-                        <p>Instagram・TikTok用のビジュアルコンテンツを量産。トレンド感のある投稿で、フォロワーエンゲージメントを向上。</p>
-                    </div>
+                    <div class="card-title">ブランドプリセット設計</div>
+                    <p class="card-desc">スタイル・トーン・ムードを履歴として保存。チーム全体で同じ撮影判断基準を共有。最初から一貫する。</p>
                 </div>
-                <div class="use-case-card fade-up">
-                    <div class="use-case-image">
-                        <img src="assets/images/usecase_ad_banner.png" alt="広告バナー" loading="lazy">
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
                     </div>
-                    <div class="use-case-content">
-                        <h3>広告バナー</h3>
-                        <p>Google広告・Facebook広告用のクリエイティブを効率的に制作。A/Bテスト用の複数パターンも簡単に生成。</p>
-                    </div>
+                    <div class="card-title">SKUが増えても崩れない</div>
+                    <p class="card-desc">プリセットとキュー生成で、商品数が増えるほど制作コストは下がる。撮影現場の香盤表はもう不要。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
+    <!-- ========== Production Support (3 Cards) ========== -->
+    <section class="section-white" id="production">
         <div class="container">
-            <h2 class="section-title fade-up">料金プラン</h2>
-            <div class="pricing-grid">
-                <!-- Unified Plan -->
-                <div class="pricing-card featured-pricing fade-up">
-                    <div class="pricing-badge">期間限定50%OFF</div>
-                    <div class="pricing-tag">ファッションEC特化プラン</div>
-                    <div class="price">
-                        <div class="price-original">¥30,000</div>
-                        <span class="price-amount">¥15,000</span>
-                        <span class="price-period">/月</span>
+            <div class="section-header">
+                <p class="section-label">Model Settings</p>
+                <h2 class="section-title fade-up">モデルも、プリセットで制御する。</h2>
+                <p class="section-desc fade-up">ウィンクタップで一括適用。アイデンティティを設計する。</p>
+            </div>
+            <div class="card-grid card-grid-3 fade-up">
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
                     </div>
-                    <p class="pricing-description">AI生成から物撮り、マーケティング支援まで。ファッションECに必要なすべてを、ワンストップで提供します。</p>
+                    <div class="card-title">性別 / 橋乱 / 体型 / バイブ</div>
+                    <p class="card-desc">ティーン履用・大人・プラスサイズなど、発泡体型設定にも対応。キャラクターを細かく配置。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <div class="card-title">ポーズ / 人種 / 肆色 / 髪型</div>
+                    <p class="card-desc">ポーズ・人種・肆色・髪色・髪の長さまで設定可能。スリーサイズ（オプション）も対応。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon-circle">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                        </svg>
+                    </div>
+                    <div class="card-title">ブランドプリセット ワンタップ適用</div>
+                    <p class="card-desc">モデル設定セットをプリセットとして保存。及び　ワンタップで全項目一括適用でき、次回の撮影も同じ標準で実行。</p>
+                </div>
+            </div>
+            <div class="section-cta fade-up">
+                <a href="#contact" class="btn-primary btn-lg">モデル設定も含めてデモする</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Pricing ========== -->
+    <section class="section-alt" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">PRICING</p>
+                <h2 class="section-title fade-up">Replace shoot costs with a monthly plan.</h2>
+                <p class="section-desc fade-up">撮影の変動費を、制作の固定費へ。まずは1SKUから試せます。</p>
+            </div>
+
+            <!-- Cost Comparison Visual -->
+            <div class="pricing-comparison fade-up"
+                style="max-width: 800px; margin: 0 auto 3rem; display: flex; gap: 1rem; align-items: center; justify-content: center;">
+                <div class="cost-card"
+                    style="flex:1; padding: 1.5rem; background: #fff; border: 1px solid #e4e4e7; border-radius: 12px; text-align: center; opacity: 0.6;">
+                    <div style="font-size: 0.75rem; color: #71717a; margin-bottom: 0.5rem;">これまで（1回あたり）</div>
+                    <div style="font-size: 1.25rem; font-weight: 700; color: #71717a;">¥100,000~</div>
+                    <div style="font-size: 0.75rem; color: #a1a1aa; margin-top: 0.25rem;">スタジオ・モデル・カメラマン</div>
+                </div>
+                <div class="cost-arrow" style="color: #18181b; font-size: 1.5rem;">→</div>
+                <div class="cost-card"
+                    style="flex:1; padding: 1.5rem; background: #fff; border: 2px solid #18181b; border-radius: 12px; text-align: center; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top:0; left:0; right:0; height: 4px; background: linear-gradient(90deg, #18181b, #52525b);">
+                    </div>
+                    <div style="font-size: 0.75rem; color: #18181b; font-weight: 600; margin-bottom: 0.5rem;">LUMINA
+                        (月額)</div>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: #18181b;">¥30,000</div>
+                    <div style="font-size: 0.75rem; color: #52525b; margin-top: 0.25rem;">撮り放題・生成し放題</div>
+                </div>
+            </div>
+
+            <div class="pricing-grid fade-up">
+                <div class="pricing-card">
+                    <div class="pricing-plan-name">Standard</div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">¥30,000</span>
+                        <span class="pricing-period">〜 / month</span>
+                    </div>
+                    <p class="pricing-desc">導入サポート込み。AI生成の基本利用に最適。</p>
                     <ul class="pricing-features">
-                        <li><span class="check">✓</span> <strong>AI生成ツール使用</strong></li>
-                        <li><span class="check">✓</span> <strong>専属モデル生成</strong></li>
-                        <li><span class="check">✓</span> <strong>AI生成画像 無制限</strong></li>
-                        <li><span class="check">✓</span> 物撮り代行プラス（30型まで+¥10,000）</li>
-                        <li><span class="check">✓</span> パスポート所有者による生成AI導入支援<br><span
-                                class="feature-detail">（ChatGPT、Gemini他）</span></li>
-                        <li><span class="check">✓</span> マーケティング支援</li>
+                        <li>全機能利用</li>
+                        <li>チーム利用</li>
+                        <li>優先サポート</li>
+                        <li>Studio / Brand / Output Preset</li>
                     </ul>
-                    <a href="#contact" class="btn-large btn-primary">お問い合わせ</a>
+                    <a href="#contact" class="btn-primary btn-full">無料デモ予約</a>
+                </div>
+                <div class="pricing-card pricing-card-enterprise">
+                    <div class="pricing-plan-name">Enterprise</div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">Contact</span>
+                    </div>
+                    <p class="pricing-desc">制作・監修・専任担当を含むフルサポート。</p>
+                    <ul class="pricing-features">
+                        <li>導入設計 / SLA</li>
+                        <li>プリセット設計支援</li>
+                        <li>制作フロー組み込み</li>
+                    </ul>
+                    <a href="#contact" class="btn-secondary btn-full">無料デモ予約</a>
                 </div>
             </div>
+            <p class="pricing-note fade-up">従来の撮影：スタジオ・モデル・カメラマン・編集…<br>LUMINA：必要なときに、必要な分だけ制作。</p>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <h2 class="section-title fade-up">よくある質問</h2>
-            <div class="faq-container">
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>AI生成の精度はどのくらいですか？</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>最新のAI技術により、プロクオリティの高精度な画像を生成します。商品の質感・色味・シルエットを忠実に再現し、自然なモデル着用イメージを実現します。</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>どんな商品に対応していますか？</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>アパレル全般（トップス・ボトムス・ワンピース・アウター等）に対応しています。アクセサリーやバッグなどの小物も対応可能です。詳細はお問い合わせください。</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>サブスクリプションの契約期間は？</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>月額契約となっており、最低契約期間は設けておりません。繁忙期のみのご利用や、単発でのご依頼も可能です。</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>納期はどのくらいですか？</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>AI生成の場合は数分〜数時間、物撮り代行は3〜5営業日、クリエイティブ撮影は内容により1〜2週間程度です。お急ぎの場合はご相談ください。</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>商用利用は可能ですか？</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>はい、生成された画像は商用利用可能です。EC・SNS・広告など、あらゆる用途でご利用いただけます。</p>
-                    </div>
-                </div>
-                <div class="faq-item fade-up">
-                    <button class="faq-question">
-                        <span>まずは試してみたいのですが...</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>無料相談・デモ依頼を受け付けております。実際の生成サンプルをご覧いただきながら、貴社のニーズに最適なプランをご提案いたします。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="contact-form-section">
+    <!-- ========== FAQ ========== -->
+    <section class="section-white" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title fade-up">無料相談・お問い合わせ</h2>
-                <p class="section-description fade-up">
-                    AI生成 × ECプロ監修で売れる商品画像を設計します。<br>
-                    まずはお気軽にご相談ください。
-                </p>
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title fade-up">よくある質問</h2>
             </div>
+            <div class="faq-container fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>どんな商品画像が必要？</span>
+                        <span class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Top・Bottom・Outer・Inner・Shoesの5カテゴリに対応。平置き・ハンガー・マネキンなど既存の商品写真を登録でき、最大3アングル（正面・背面・ディテール）まで追加することで生成精度が向上します。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>商用利用は可能？</span>
+                        <span class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. 全生成画像はEC・SNS・広告など商用利用可能。STD/HD/MAXの3構解像度でダウンロードでき、各画像は個別にあるいは一括で入手できます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ブランドのトーンは守れる？</span>
+                        <span class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Brandプリセット機能により、スタイル・トーン・ムードを日本語で保存。Studio Presetで背景・ライティング・シード値を固定し、何回生成しても同じ世界観を再現できます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>導入サポートはある？</span>
+                        <span class="faq-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19" />
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Enterpriseプランでは、ブランドプリセット/Studio Presetの設計支援までフルサポート。Standardプランにも優先サポート・チーム利用・全機能利用が含まれます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ========== Final CTA ========== -->
+    <section class="section-dark section-final-cta">
+        <div class="container">
+            <div class="final-cta">
+                <h2 class="final-cta-title fade-up">御社の商品で、<br>今すぐ試しませんか？</h2>
+                <p class="final-cta-desc fade-up">まずは1点でOK。制作に落ちるかどうか、デモで確認しましょう。</p>
+                <div class="final-cta-buttons fade-up">
+                    <a href="#contact" class="btn-primary-light btn-lg">無料デモ予約</a>
+                </div>
+                <div class="hero-note" style="justify-content: center; margin-top: 1.5rem;">
+                    <ul class="mini-proof" style="justify-content: center; color: rgba(255,255,255,0.4);">
+                        <li style="color: rgba(255,255,255,0.4);">その場で生成</li>
+                        <li style="color: rgba(255,255,255,0.4);">用途別出力</li>
+                        <li style="color: rgba(255,255,255,0.4);">プリセット設計の相談OK</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Contact Form ========== -->
+    <section class="section-white" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-up">無料デモ予約</h2>
+                <p class="section-desc fade-up">商品URLか画像があれば、デモが早いです。<br>（なくても相談OK）</p>
+            </div>
             <div class="contact-form-wrapper fade-up">
                 <form id="contactForm" class="contact-form">
-                    <!-- Honeypot field for spam protection -->
                     <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off">
-
                     <div class="form-group">
                         <label for="company">会社名 <span class="required">*</span></label>
                         <input type="text" id="company" name="company" required>
                     </div>
-
                     <div class="form-group">
                         <label for="name">ご担当者名 <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required>
                     </div>
-
                     <div class="form-group">
                         <label for="email">メールアドレス <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required>
                     </div>
-
                     <div class="form-group">
                         <label for="contact-type">お問い合わせ種別 <span class="required">*</span></label>
                         <select id="contact-type" name="contact_type" required>
-                            <option value="">選択してください</option>
-                            <option value="demo">無料相談・デモ依頼</option>
+                            <option value="demo" selected>無料デモ予約（30分）</option>
                             <option value="pricing">料金プランについて</option>
-                            <option value="technical">技術的な質問</option>
-                            <option value="partnership">業務提携について</option>
+                            <option value="production">制作支援について</option>
                             <option value="other">その他</option>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="message">ご相談内容 <span class="required">*</span></label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">ご相談内容（任意）</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
                     </div>
-
-                    <button type="submit" class="btn-large btn-primary" id="submitBtn">送信する</button>
+                    <button type="submit" class="btn-primary btn-lg btn-full" id="submitBtn">デモを予約する</button>
                     <div id="formMessage" class="form-message"></div>
                 </form>
             </div>
-
             <div class="contact-info fade-up">
                 <p>📧 tomorrowprooftokyo@gmail.com</p>
-                <p>営業時間:平日 10:00 - 18:00</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <!-- Sticky CTA -->
-    <div class="sticky-cta" id="sticky-cta">
-        <div class="sticky-cta-content">
-            <div class="sticky-cta-text">
-                <span class="sticky-cta-title">今すぐ始める</span>
-                <span class="sticky-cta-price">¥15,000/月</span>
-            </div>
-            <a href="#contact" class="btn-primary">無料相談する</a>
-        </div>
-    </div>
+    <!-- ========== Footer ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand fade-up">
-                    <a href="#" class="footer-logo">
-                        <span class="logo-main">lumina</span>
-                        <span class="logo-sub">STUDIO</span>
-                    </a>
-                    <p>AIファッションフォト生成 × クリエイティブ制作サービス</p>
+                <div class="footer-brand">
+                    <a href="#" class="logo"><span class="logo-text">LUMINA STUDIO</span></a>
+                    <p class="footer-tagline">AI-powered fashion studio for D2C brands.</p>
                 </div>
                 <div class="footer-links">
-                    <div class="footer-column fade-up">
+                    <div class="footer-column">
                         <h4>サービス</h4>
                         <ul>
-                            <li><a href="#ai-service">AI生成</a></li>
-                            <li><a href="#subscription">サブスク</a></li>
+                            <li><a href="#how-it-works">How it works</a></li>
+                            <li><a href="#why-lumina">Why LUMINA</a></li>
                             <li><a href="#pricing">料金</a></li>
+                            <li><a href="#faq">FAQ</a></li>
                         </ul>
                     </div>
-                    <div class="footer-column fade-up">
+                    <div class="footer-column">
                         <h4>サポート</h4>
                         <ul>
-                            <li><a href="#faq">FAQ</a></li>
                             <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="https://lumina-fashion-studio.vercel.app/app/new" target="_blank"
+                                    rel="noopener noreferrer">Studio</a></li>
                         </ul>
                     </div>
                 </div>
