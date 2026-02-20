@@ -2715,3 +2715,54 @@ body.dev-mode .dev-mode-indicator {
     }
 }
 
+
+/* =============================================================
+   LOGO UPDATE 2 — Header back to original size (uppercase)
+   Footer: full-width MiuMiu-style display logo
+   ============================================================= */
+
+/* Header logo — original compact size, uppercase */
+.logo-text {
+    font-family: 'Rubik', 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: var(--zinc-900);
+    line-height: 1;
+}
+
+/* Full-width footer display logo */
+.footer-display-logo {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer-display-logo-text {
+    font-family: 'Rubik', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 18vw, 18rem);
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 0.85;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0 0 0 0;
+    /* Clip bottom so only top of letters show, like MiuMiu */
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .footer-display-logo-text {
+        font-size: clamp(3rem, 20vw, 8rem);
+    }
+}
+
