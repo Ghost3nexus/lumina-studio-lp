@@ -455,108 +455,79 @@
                 </div>
             </div>
 
-            <!-- Output Format Grid -->
-            <div class="output-format-grid fade-up">
+            <!-- Output Format Gallery (asymmetric: large-left + stacked-right) -->
+            <div class="ofgallery fade-up">
 
-                <!-- EC Multi-view -->
-                <div class="output-format-card">
-                    <div class="ofcard-preview ofcard-preview--ec">
-                        <div class="ofcard-preview-bar">
-                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
-                            <span class="ofbar-title">EC product page</span>
+                <!-- LEFT: EC Multi-view (large) -->
+                <div class="ofgallery-main">
+                    <div class="ofgallery-img-wrap" data-dd-slot="ec">
+                        <img class="ofgallery-img" src="assets/images/usecase_ec.jpg" alt="EC Multi-view sample"
+                            draggable="false">
+                        <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
+                        <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
+                            aria-hidden="true">
+                    </div>
+                    <div class="ofgallery-footer">
+                        <div class="ofgallery-label">
+                            <span class="ofgallery-title">EC Multi-view</span>
+                            <span class="ofgallery-ratio">3 : 4</span>
                         </div>
-                        <div class="ofcard-preview-body">
-                            <div class="ofmock-portrait"></div>
-                            <div class="ofmock-stack">
-                                <div class="ofmock-thumb"></div>
-                                <div class="ofmock-thumb"></div>
-                                <div class="ofmock-thumb"></div>
+                        <div class="ofcard-pills">
+                            <span class="ofcard-pill">Front</span>
+                            <span class="ofcard-pill">Back</span>
+                            <span class="ofcard-pill">Side</span>
+                            <span class="ofcard-pill">Close-up</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: IG + Ads stacked -->
+                <div class="ofgallery-side">
+
+                    <!-- Instagram -->
+                    <div class="ofgallery-sub">
+                        <div class="ofgallery-img-wrap" data-dd-slot="ig">
+                            <img class="ofgallery-img" src="assets/images/usecase_sns.jpg" alt="Instagram sample"
+                                draggable="false">
+                            <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
+                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
+                                aria-hidden="true">
+                        </div>
+                        <div class="ofgallery-footer">
+                            <div class="ofgallery-label">
+                                <span class="ofgallery-title">Instagram</span>
+                                <span class="ofgallery-ratio">1 : 1</span>
+                            </div>
+                            <div class="ofcard-pills">
+                                <span class="ofcard-pill">Clean</span>
+                                <span class="ofcard-pill">Square</span>
                             </div>
                         </div>
                     </div>
-                    <div class="ofcard-top">
-                        <div class="ofcard-title">EC Multi-view</div>
-                        <div class="ofcard-meta">
-                            <span class="ofcard-ratio-label">3 : 4</span>
-                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
-                        </div>
-                    </div>
-                    <div class="ofcard-pills">
-                        <span class="ofcard-pill">Front</span>
-                        <span class="ofcard-pill">Back</span>
-                        <span class="ofcard-pill">Side</span>
-                        <span class="ofcard-pill">Close-up</span>
-                        <span class="ofcard-pill">Detail</span>
-                    </div>
-                    <div class="ofcard-res">
-                        <button class="ofcard-res-btn" type="button">STD</button>
-                        <button class="ofcard-res-btn is-active" type="button">HD</button>
-                        <button class="ofcard-res-btn" type="button">MAX</button>
-                    </div>
-                </div>
 
-                <!-- Instagram -->
-                <div class="output-format-card">
-                    <div class="ofcard-preview ofcard-preview--ig">
-                        <div class="ofcard-preview-bar">
-                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
-                            <span class="ofbar-title">Instagram feed</span>
+                    <!-- Ads / Campaign -->
+                    <div class="ofgallery-sub">
+                        <div class="ofgallery-img-wrap" data-dd-slot="ads">
+                            <img class="ofgallery-img" src="assets/images/usecase_ad_banner.png" alt="Ads sample"
+                                draggable="false">
+                            <div class="ofgallery-hint" aria-hidden="true">Drop image to replace</div>
+                            <input type="file" class="ofgallery-file-input" accept="image/*" tabindex="-1"
+                                aria-hidden="true">
                         </div>
-                        <div class="ofcard-preview-body">
-                            <div class="ofmock-square"></div>
+                        <div class="ofgallery-footer">
+                            <div class="ofgallery-label">
+                                <span class="ofgallery-title">Ads / Campaign</span>
+                                <span class="ofgallery-ratio">16 : 9</span>
+                            </div>
+                            <div class="ofcard-pills">
+                                <span class="ofcard-pill">Banner</span>
+                                <span class="ofcard-pill">Cinematic</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="ofcard-top">
-                        <div class="ofcard-title">Instagram</div>
-                        <div class="ofcard-meta">
-                            <span class="ofcard-ratio-label">1 : 1</span>
-                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
-                        </div>
-                    </div>
-                    <div class="ofcard-pills">
-                        <span class="ofcard-pill">Clean</span>
-                        <span class="ofcard-pill">Square</span>
-                        <span class="ofcard-pill">Lifestyle</span>
-                    </div>
-                    <div class="ofcard-res">
-                        <button class="ofcard-res-btn" type="button">STD</button>
-                        <button class="ofcard-res-btn is-active" type="button">HD</button>
-                        <button class="ofcard-res-btn" type="button">MAX</button>
-                    </div>
-                </div>
 
-                <!-- Ads / Campaign -->
-                <div class="output-format-card">
-                    <div class="ofcard-preview ofcard-preview--ads">
-                        <div class="ofcard-preview-bar">
-                            <span class="ofdot"></span><span class="ofdot"></span><span class="ofdot"></span>
-                            <span class="ofbar-title">Ad banner</span>
-                        </div>
-                        <div class="ofcard-preview-body">
-                            <div class="ofmock-wide"></div>
-                        </div>
-                    </div>
-                    <div class="ofcard-top">
-                        <div class="ofcard-title">Ads / Campaign</div>
-                        <div class="ofcard-meta">
-                            <span class="ofcard-ratio-label">16 : 9</span>
-                            <span class="ofcard-status"><span class="ofstatus-dot"></span>Ready</span>
-                        </div>
-                    </div>
-                    <div class="ofcard-pills">
-                        <span class="ofcard-pill">Banner</span>
-                        <span class="ofcard-pill">Cinematic</span>
-                        <span class="ofcard-pill">Campaign</span>
-                    </div>
-                    <div class="ofcard-res">
-                        <button class="ofcard-res-btn" type="button">STD</button>
-                        <button class="ofcard-res-btn is-active" type="button">HD</button>
-                        <button class="ofcard-res-btn" type="button">MAX</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+                </div><!-- /ofgallery-side -->
+            </div><!-- /ofgallery -->
     </section>
 
     <!-- ========== Mid CTA ========== -->

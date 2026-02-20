@@ -690,3 +690,53 @@ if (contactForm) {
     document.head.appendChild(style);
 })();
 
+
+/* ============================================================
+   OFGALLERY — drag-and-drop / click-to-replace (2026-02-20)
+   Scoped to [data-dd-slot] within .ofgallery
+   ============================================================ */
+(function () {
+    function loadImageIntoWrap(wrap, file) {
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            let img = wrap.querySelector('.ofgallery-img');
+            if (!img) {
+                img = document.createElement('img');
+                img.className = 'ofgallery-img';
+                img.draggable = false;
+                wrap.prepend(img);
+            }
+            img.src = e.target.result;
+            img.alt = 'Custom image';
+        };
+        reader.readAsDataURL(file);
+    }
+
+    document.querySelectorAll('.ofgallery-img-wrap').forEach(function (wrap) {
+        // File input (click)
+        const input = wrap.querySelector('.ofgallery-file-input');
+        if (input) {
+            input.addEventListener('change', function () {
+                if (this.files && this.files[0]) loadImageIntoWrap(wrap, this.files[0]);
+                this.value = '';
+            });
+        }
+
+        // Drag & Drop
+        wrap.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            wrap.classList.add('is-over');
+        });
+        wrap.addEventListener('dragleave', function (e) {
+            if (!wrap.contains(e.relatedTarget)) wrap.classList.remove('is-over');
+        });
+        wrap.addEventListener('drop', function (e) {
+            e.preventDefault();
+            wrap.classList.remove('is-over');
+            const file = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+            if (file) loadImageIntoWrap(wrap, file);
+        });
+    });
+})();
+
