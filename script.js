@@ -1,3 +1,5 @@
+const PROD_MODE = true;
+
 // ===================================
 // Mobile Menu Toggle
 // ===================================
@@ -713,7 +715,7 @@ if (contactForm) {
         reader.readAsDataURL(file);
     }
 
-    document.querySelectorAll('.ofgallery-img-wrap').forEach(function (wrap) {
+    if (!PROD_MODE) document.querySelectorAll('.ofgallery-img-wrap').forEach(function (wrap) {
         // File input (click)
         const input = wrap.querySelector('.ofgallery-file-input');
         if (input) {
@@ -786,6 +788,7 @@ if (contactForm) {
    THUMBSTRIP — syncs with EC carousel, per-thumb D&D (2026-02-21)
    ============================================================ */
 (function () {
+    if (PROD_MODE) return;
     const carousel   = document.getElementById('ecCarousel');
     const thumbstrip = document.getElementById('ecThumbstrip');
     if (!carousel || !thumbstrip) return;

@@ -3253,3 +3253,21 @@ body.dev-mode .dev-mode-indicator {
     height: 100%;
 }
 
+
+
+/* =============================================================
+   PRODUCTION GUARD — disable all D&D UI (2026-02-21 hotfix)
+   ============================================================= */
+.ofgallery-hint,
+.studio-dd-hint,
+.ofgallery-file-input,
+.ofc-thumb .ofgallery-file-input {
+    display: none !important;
+    pointer-events: none !important;
+}
+.ofgallery-img-wrap,
+.ofgallery-img-wrap--portrait,
+.ofgallery-img-wrap--landscape,
+.ofc-thumb {
+    cursor: default !important;
+}
