@@ -3271,3 +3271,31 @@ body.dev-mode .dev-mode-indicator {
 .ofc-thumb {
     cursor: default !important;
 }
+
+
+/* =============================================================
+   PRODUCTION HARDLOCK — no D&D, no file picker (2026-02-21)
+   ============================================================= */
+input[type="file"],
+.ofgallery-file-input,
+.ofgallery-hint,
+.studio-dd-hint {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+}
+.ofgallery-img-wrap,
+.ofgallery-img-wrap--portrait,
+.ofgallery-img-wrap--landscape,
+.studio-hero-card,
+.ofc-thumb {
+    cursor: default !important;
+}
+img[data-img-key] {
+    cursor: default !important;
+    pointer-events: none !important;
+}
